@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UILabel {
-    func adShadow() {
+    func addShadow() {
         self.layer.shadowOffset = CGSize(width: 1, height: 1)
         self.layer.shadowOpacity = 0.8
         self.layer.shadowRadius = 2

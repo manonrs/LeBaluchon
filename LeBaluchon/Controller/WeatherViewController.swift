@@ -82,12 +82,14 @@ class WeatherViewController: UIViewController {
         self.cityNameLabel.text = new.name
         self.tempLabel.text = "\(new.main.temp.editMaxDigitTo(1))°C"
         self.iconImageView.loadIcon(first.icon)
+        self.iconImageView.adShadow()
         self.descriptionLabel.text = first.description.capitalizingFirstLetter()
         self.cityPicture.loadCityImage(new2.urls.regular)
         self.feelsLikeLabel.text = "Ressenti : \(new.main.feels_like.editMaxDigitTo(1)) °C"
-        self.tempLabel.adShadow()
-        self.descriptionLabel.adShadow()
-        self.feelsLikeLabel.adShadow()
+        self.tempLabel.addShadow()
+        self.descriptionLabel.addShadow()
+        self.feelsLikeLabel.addShadow()
+        self.cityNameLabel.addShadow()
     }
     
 
