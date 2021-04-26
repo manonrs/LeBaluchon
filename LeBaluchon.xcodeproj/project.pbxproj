@@ -42,6 +42,9 @@
 		EFDD961726287EA000EDD5F5 /* UnsplashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDD961626287EA000EDD5F5 /* UnsplashAPI.swift */; };
 		EFDD961C26287EBB00EDD5F5 /* PhotosInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDD961B26287EBB00EDD5F5 /* PhotosInfo.swift */; };
 		EFE582792636E8A90048BCEF /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE582782636E8A90048BCEF /* ExtensionUIViewController.swift */; };
+		EFE582802636F0690048BCEF /* usflag.png in Resources */ = {isa = PBXBuildFile; fileRef = EFE5827E2636F0690048BCEF /* usflag.png */; };
+		EFE582882636F17C0048BCEF /* frflag.png in Resources */ = {isa = PBXBuildFile; fileRef = EFE582872636F17C0048BCEF /* frflag.png */; };
+		EFE5828D26370AC20048BCEF /* ExtensionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5828C26370AC20048BCEF /* ExtensionUIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +105,9 @@
 		EFDD961626287EA000EDD5F5 /* UnsplashAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPI.swift; sourceTree = "<group>"; };
 		EFDD961B26287EBB00EDD5F5 /* PhotosInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosInfo.swift; sourceTree = "<group>"; };
 		EFE582782636E8A90048BCEF /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
+		EFE5827E2636F0690048BCEF /* usflag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usflag.png; sourceTree = "<group>"; };
+		EFE582872636F17C0048BCEF /* frflag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frflag.png; sourceTree = "<group>"; };
+		EFE5828C26370AC20048BCEF /* ExtensionUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +231,8 @@
 				EF79021E2620969E00D0D531 /* AppDelegate.swift */,
 				EF7902202620969E00D0D531 /* SceneDelegate.swift */,
 				EF79028A2624986100D0D531 /* dollars.jpeg */,
+				EFE582872636F17C0048BCEF /* frflag.png */,
+				EFE5827E2636F0690048BCEF /* usflag.png */,
 				EF790227262096A100D0D531 /* Assets.xcassets */,
 			);
 			path = Ressources;
@@ -237,6 +245,7 @@
 				EFE582782636E8A90048BCEF /* ExtensionUIViewController.swift */,
 				EF79028F2625B52600D0D531 /* ExtensionFloat.swift */,
 				EFBB25B6262845F2005464C6 /* ExtensionUITextField.swift */,
+				EFE5828C26370AC20048BCEF /* ExtensionUIButton.swift */,
 				EFB8D9A82629A7C2003B62B7 /* ExtensionString.swift */,
 			);
 			path = Extension;
@@ -360,8 +369,10 @@
 			files = (
 				EF79022B262096A100D0D531 /* LaunchScreen.storyboard in Resources */,
 				EF79028B2624986100D0D531 /* dollars.jpeg in Resources */,
+				EFE582802636F0690048BCEF /* usflag.png in Resources */,
 				EF790228262096A100D0D531 /* Assets.xcassets in Resources */,
 				EF7902262620969E00D0D531 /* Main.storyboard in Resources */,
+				EFE582882636F17C0048BCEF /* frflag.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +412,7 @@
 				EF7902A72625C83A00D0D531 /* RateInfo.swift in Sources */,
 				EFB8D9B32629CCEE003B62B7 /* GoogleTranslateViewController.swift in Sources */,
 				EF7902212620969E00D0D531 /* SceneDelegate.swift in Sources */,
+				EFE5828D26370AC20048BCEF /* ExtensionUIButton.swift in Sources */,
 				EF7902A22625C6F800D0D531 /* FixerApi.swift in Sources */,
 				EFBB25B7262845F3005464C6 /* ExtensionUITextField.swift in Sources */,
 				EF79025A26209A5700D0D531 /* OpenWeatherAPI.swift in Sources */,

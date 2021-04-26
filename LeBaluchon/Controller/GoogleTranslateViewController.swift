@@ -31,7 +31,7 @@ class GoogleTranslateViewController: UIViewController {
                     self.updateUI()
                 }
             case .failure(let error):
-                self?.showAlert()
+                self.showAlert()
                 print("error: \(error)")
             }
         }
@@ -44,6 +44,8 @@ class GoogleTranslateViewController: UIViewController {
         finalText.layer.masksToBounds = true
         finalText.layer.cornerRadius = 5
         finalText.text = text?.data.translations.first?.translatedText.replace(target: "&#39;", withString: "'").capitalizingFirstLetter()
+        translateButton.layer.masksToBounds = true
+        translateButton.layer.cornerRadius = 10
     }
     
     @IBAction func didTapTranslateButton(_ sender: UIButton) {
