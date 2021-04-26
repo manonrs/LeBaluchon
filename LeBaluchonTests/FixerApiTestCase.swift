@@ -23,13 +23,13 @@ class FixerApiTestCase: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-     //Given:
+        // Given:
         let currencyService = FixerApi (
             urlSession: URLSessionFake(data: nil, response: nil, error: FakeReponseData.error))
         
-        //When:
+        // When:
         currencyService.fetchCurrencyData { (result) in
-            //Then:
+            // Then:
             guard case .failure(let error) = result else {
                 XCTFail("Test request method with an error failed.")
                 return
@@ -38,5 +38,75 @@ class FixerApiTestCase: XCTestCase {
         }
     }
 
+    func testGetCurrencyShouldPostFailedCompletionIfNoData() throws {
+        // Given:
+        let currencyService = FixerApi (
+            urlSession: URLSessionFake(data: nil, response: nil, error: nil))
+        
+        // When:
+        currencyService.fetchCurrencyData { (result) in
+            // Then:
+            guard case .failure(let error) = result else {
+                XCTFail("Test request method with an error failed.")
+                return
+            }
+            XCTAssertNotNil(error)
+        }
+    }
+    
+    func testGetCurrencyShouldPostFailedCompletionIfIncorrectResponse() throws {
+        // Given:
+        let currencyService = FixerApi (
+            urlSession: URLSessionFake(data: FakeReponseData.fixerCorrectData, response: FakeReponseData.responseK0, error: nil))
+        
+        // When:
+        currencyService.fetchCurrencyData { (result) in
+            // Then:
+            guard case .failure(let error) = result else {
+                XCTFail("Test request method with an error failed.")
+                return
+            }
+            XCTAssertNotNil(error)
+        }
+    }
+    
+    func testGetCurrencyShouldPostFailedCompletionIfIncorrectData() throws {
+        // Given:
+        let currencyService = FixerApi (
+            urlSession: URLSessionFake(data: FakeReponseData.incorrectData, response: FakeReponseData.responseOK, error: nil))
+        
+        // When:
+        currencyService.fetchCurrencyData { (result) in
+            // Then:
+            guard case .failure(let error) = result else {
+                XCTFail("Test request method with an error failed.")
+                return
+            }
+            XCTAssertNotNil(error)
+        }
+    }
+    
+    func testGetCurrencyShouldPostSuccessCompletionIfNoErrorAndCorrectData() throws {
+        // Given:
+        let currencyService = FixerApi (
+            urlSession: URLSessionFake(data: FakeReponseData.fixerCorrectData, response: FakeReponseData.responseOK, error: nil))
+        
+        // When:
+        currencyService.fetchCurrencyData { (result) in
+            // Then:
+            guard case .success(let success) = result else {
+                XCTFail("Test request method with an error failed.")
+                return
+            }
+            let base = "EUR"
+            let rates = Float(1.202769)
+            XCTAssertNotNil(success)
+            XCTAssertEqual(base, success.base)
+            XCTAssertEqual(rates, success.rates.USD)
+            XCTAssertEqual(base, "EUR")
+
+        }
+    }
+    
 }
 

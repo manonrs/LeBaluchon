@@ -19,7 +19,7 @@ class GoogleAPITestCase: XCTestCase {
         
     }
 
-    func testGetPhotoShouldPostFailedCompletionIfError() throws {
+    func testGetTranslationShouldPostFailedCompletionIfError() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
@@ -37,4 +37,70 @@ class GoogleAPITestCase: XCTestCase {
         }
     }
 
+    func testGetTranslationShouldPostFailedCompletionIfNoData() throws {
+        // Given:
+        let translateService = GoogleTranslateAPI (
+            urlSession: URLSessionFake(data: nil, response: nil, error: nil))
+        
+        // When:
+        translateService.fetchTranslationData("bonjour") { (result) in
+            // Then:
+            guard case .failure(let error) = result else {
+                XCTFail("Test request method with an error failed.")
+                return
+            }
+            XCTAssertNotNil(error)
+        }
+    }
+    
+    func testGetTranslationShouldPostFailedCompletionIfIncorrectResponse() throws {
+        // Given:
+        let translateService = GoogleTranslateAPI (
+            urlSession: URLSessionFake(data: FakeReponseData.googleCorrectData, response: FakeReponseData.responseK0, error: nil))
+        
+        // When:
+        translateService.fetchTranslationData("bonjour") { (result) in
+            // Then:
+            guard case .failure(let error) = result else {
+                XCTFail("Test request method with an error failed.")
+                return
+            }
+            XCTAssertNotNil(error)
+        }
+    }
+    
+    func testGetTranslationShouldPostFailedCompletionIfIncorrectData() throws {
+        // Given:
+        let translateService = GoogleTranslateAPI (
+            urlSession: URLSessionFake(data: FakeReponseData.incorrectData, response: FakeReponseData.responseOK, error: nil))
+        
+        // When:
+        translateService.fetchTranslationData("bonjour") { (result) in
+            // Then:
+            guard case .failure(let error) = result else {
+                XCTFail("Test request method with an error failed.")
+                return
+            }
+            XCTAssertNotNil(error)
+        }
+    }
+    
+    func testGetTranslationShouldPostSuccessCompletionIfNoErrorAndCorrectData() throws {
+        // Given:
+        let translateService = GoogleTranslateAPI (
+            urlSession: URLSessionFake(data: FakeReponseData.googleCorrectData, response: FakeReponseData.responseOK, error: nil))
+        
+        // When:
+        translateService.fetchTranslationData("bonjour") { (result) in
+            // Then:
+            let translatedText =  "Hello"
+            guard case .success(let success) = result else {
+                XCTFail("Test request method with an error failed.")
+                return
+            }
+            XCTAssertNotNil(success)
+            XCTAssertEqual(translatedText, success.data.translations[0].translatedText)
+        }
+    }
+    
 }

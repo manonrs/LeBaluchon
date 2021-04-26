@@ -5,7 +5,7 @@
     },
     "weather": [
         {
-            "id": 800,
+            "id": 800.5,
             "main": "Clear",
             "description": "ciel dégagé",
             "icon": "01d"
