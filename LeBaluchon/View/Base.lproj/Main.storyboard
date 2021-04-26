@@ -147,7 +147,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Montant à convertir" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCl-gB-XA5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Montant à convertir" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCl-gB-XA5">
                                 <rect key="frame" x="24" y="124" width="283" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" red="0.062745098040000002" green="0.40000000000000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -180,7 +180,7 @@
                                     <action selector="didTapConversionButton:" destination="407-Jx-jfW" eventType="touchUpInside" id="Xpt-30-96g"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6i-bK-mcR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6i-bK-mcR">
                                 <rect key="frame" x="24" y="604" width="283" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="1Zr-Qi-6Rx"/>
@@ -255,18 +255,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Texte à traduire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIf-7w-bIy">
-                                <rect key="frame" x="56" y="124" width="227" height="75"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
-                                <color key="textColor" red="0.062745098040000002" green="0.40000000000000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallPaperPattern1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="sQo-hA-PL3">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frflag.png" translatesAutoresizingMaskIntoConstraints="NO" id="vsL-J6-98U">
-                                <rect key="frame" x="283" y="124" width="75" height="75"/>
+                                <rect key="frame" x="24" y="124" width="32" height="75"/>
                                 <color key="tintColor" red="0.062745098040000002" green="0.40000000000000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="Ump-Hq-n2H"/>
-                                    <constraint firstAttribute="width" constant="75" id="urX-0K-Whf"/>
+                                    <constraint firstAttribute="width" constant="32" id="urX-0K-Whf"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKl-Z2-P4n">
@@ -283,21 +281,20 @@
                                     <action selector="didTapTranslateButton:" destination="IAZ-ml-2N8" eventType="touchUpInside" id="1PC-eG-XaK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traduction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vC-Rd-bzM">
-                                <rect key="frame" x="163" y="531" width="171" height="68"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traduction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vC-Rd-bzM">
+                                <rect key="frame" x="72" y="531" width="318" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="wbG-DS-W7K"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
-                                <color key="textColor" red="0.062745098040000002" green="0.40000000000000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="usflag.png" translatesAutoresizingMaskIntoConstraints="NO" id="XXh-9y-W8H">
-                                <rect key="frame" x="80" y="531" width="75" height="75"/>
+                                <rect key="frame" x="24" y="531" width="32" height="75"/>
                                 <color key="tintColor" red="0.062745098040000002" green="0.40000000000000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="lc5-EO-9o2"/>
-                                    <constraint firstAttribute="width" constant="75" id="rnl-ia-oD5"/>
+                                    <constraint firstAttribute="width" constant="32" id="rnl-ia-oD5"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ceci est un test" translatesAutoresizingMaskIntoConstraints="NO" id="l95-mv-7O0">
@@ -314,6 +311,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Texte à traduire" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIf-7w-bIy">
+                                <rect key="frame" x="72" y="124" width="318" height="75"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zf0-K3-zYM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -322,24 +324,28 @@
                             <constraint firstItem="UGu-b1-h1h" firstAttribute="top" secondItem="3vC-Rd-bzM" secondAttribute="bottom" constant="16" id="2Tn-B7-9SD"/>
                             <constraint firstItem="zf0-K3-zYM" firstAttribute="bottom" secondItem="UGu-b1-h1h" secondAttribute="bottom" constant="24" id="683-7J-EhG"/>
                             <constraint firstItem="l95-mv-7O0" firstAttribute="top" secondItem="sIf-7w-bIy" secondAttribute="bottom" constant="16" id="7pU-CR-ZAE"/>
-                            <constraint firstItem="sIf-7w-bIy" firstAttribute="leading" secondItem="zf0-K3-zYM" secondAttribute="leading" constant="56" id="A0E-n1-Svi"/>
                             <constraint firstItem="FKl-Z2-P4n" firstAttribute="centerY" secondItem="J1V-Db-xtN" secondAttribute="centerY" id="CHf-we-fg7"/>
-                            <constraint firstItem="3vC-Rd-bzM" firstAttribute="leading" secondItem="XXh-9y-W8H" secondAttribute="trailing" constant="8" id="Dbs-iw-8sg"/>
+                            <constraint firstItem="XXh-9y-W8H" firstAttribute="leading" secondItem="zf0-K3-zYM" secondAttribute="leading" constant="24" id="CW4-6X-bDJ"/>
+                            <constraint firstItem="sIf-7w-bIy" firstAttribute="leading" secondItem="vsL-J6-98U" secondAttribute="trailing" constant="16" id="GRQ-qs-3f0"/>
+                            <constraint firstItem="sQo-hA-PL3" firstAttribute="leading" secondItem="zf0-K3-zYM" secondAttribute="leading" id="HGa-jX-o6H"/>
                             <constraint firstItem="sIf-7w-bIy" firstAttribute="top" secondItem="zf0-K3-zYM" secondAttribute="top" constant="80" id="I9M-bc-F2g"/>
                             <constraint firstItem="FKl-Z2-P4n" firstAttribute="leading" secondItem="zf0-K3-zYM" secondAttribute="leading" constant="130" id="IsZ-o5-JeV"/>
                             <constraint firstItem="UGu-b1-h1h" firstAttribute="leading" secondItem="zf0-K3-zYM" secondAttribute="leading" constant="24" id="K5c-UQ-AaR"/>
                             <constraint firstItem="zf0-K3-zYM" firstAttribute="trailing" secondItem="FKl-Z2-P4n" secondAttribute="trailing" constant="130" id="S3I-RE-vx5"/>
                             <constraint firstItem="zf0-K3-zYM" firstAttribute="trailing" secondItem="UGu-b1-h1h" secondAttribute="trailing" constant="24" id="V5D-XT-Xe3"/>
-                            <constraint firstItem="XXh-9y-W8H" firstAttribute="leading" secondItem="zf0-K3-zYM" secondAttribute="leading" constant="80" id="deG-OS-MgK"/>
-                            <constraint firstItem="zf0-K3-zYM" firstAttribute="trailing" secondItem="vsL-J6-98U" secondAttribute="trailing" constant="56" id="hvl-Ya-2P8"/>
+                            <constraint firstItem="zf0-K3-zYM" firstAttribute="trailing" secondItem="3vC-Rd-bzM" secondAttribute="trailing" constant="24" id="ava-j1-025"/>
+                            <constraint firstAttribute="bottom" secondItem="sQo-hA-PL3" secondAttribute="bottom" id="bpA-ZF-5zW"/>
                             <constraint firstItem="FKl-Z2-P4n" firstAttribute="top" secondItem="l95-mv-7O0" secondAttribute="bottom" constant="24" id="ihR-8a-MUG"/>
+                            <constraint firstItem="3vC-Rd-bzM" firstAttribute="leading" secondItem="XXh-9y-W8H" secondAttribute="trailing" constant="16" id="ixO-xJ-trF"/>
+                            <constraint firstItem="zf0-K3-zYM" firstAttribute="trailing" secondItem="sIf-7w-bIy" secondAttribute="trailing" constant="24" id="mA7-6N-jaN"/>
+                            <constraint firstItem="sQo-hA-PL3" firstAttribute="top" secondItem="J1V-Db-xtN" secondAttribute="top" id="mKl-36-N53"/>
                             <constraint firstItem="3vC-Rd-bzM" firstAttribute="top" secondItem="FKl-Z2-P4n" secondAttribute="bottom" constant="48" id="o6d-38-L9P"/>
+                            <constraint firstItem="vsL-J6-98U" firstAttribute="leading" secondItem="zf0-K3-zYM" secondAttribute="leading" constant="24" id="pW8-Bp-zbd"/>
                             <constraint firstItem="XXh-9y-W8H" firstAttribute="top" secondItem="3vC-Rd-bzM" secondAttribute="top" id="qNh-Ch-WEU"/>
                             <constraint firstItem="zf0-K3-zYM" firstAttribute="trailing" secondItem="l95-mv-7O0" secondAttribute="trailing" constant="24" id="qiQ-jp-7Ak"/>
                             <constraint firstItem="vsL-J6-98U" firstAttribute="top" secondItem="zf0-K3-zYM" secondAttribute="top" constant="80" id="srO-Oa-dak"/>
                             <constraint firstItem="l95-mv-7O0" firstAttribute="top" secondItem="vsL-J6-98U" secondAttribute="bottom" constant="16" id="xAD-sH-VEs"/>
-                            <constraint firstItem="zf0-K3-zYM" firstAttribute="trailing" secondItem="3vC-Rd-bzM" secondAttribute="trailing" constant="80" id="xum-PD-q0f"/>
-                            <constraint firstItem="sIf-7w-bIy" firstAttribute="trailing" secondItem="vsL-J6-98U" secondAttribute="leading" id="y13-6i-ymX"/>
+                            <constraint firstItem="sQo-hA-PL3" firstAttribute="trailing" secondItem="zf0-K3-zYM" secondAttribute="trailing" id="ykL-HQ-VqJ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Traduction" image="book.fill" catalog="system" id="QuW-1C-EeM"/>
@@ -364,6 +370,7 @@
         <image name="frflag.png" width="48" height="48"/>
         <image name="sun.max" catalog="system" width="128" height="124"/>
         <image name="usflag.png" width="48" height="48"/>
+        <image name="wallPaperPattern1.jpeg" width="474" height="1025"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
