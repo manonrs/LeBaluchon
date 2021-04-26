@@ -45,6 +45,7 @@
 		EFE582802636F0690048BCEF /* usflag.png in Resources */ = {isa = PBXBuildFile; fileRef = EFE5827E2636F0690048BCEF /* usflag.png */; };
 		EFE582882636F17C0048BCEF /* frflag.png in Resources */ = {isa = PBXBuildFile; fileRef = EFE582872636F17C0048BCEF /* frflag.png */; };
 		EFE5828D26370AC20048BCEF /* ExtensionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5828C26370AC20048BCEF /* ExtensionUIButton.swift */; };
+		EFE5829D26371B2C0048BCEF /* ExtensionUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE5829C26371B2C0048BCEF /* ExtensionUILabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		EFE5827E2636F0690048BCEF /* usflag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usflag.png; sourceTree = "<group>"; };
 		EFE582872636F17C0048BCEF /* frflag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frflag.png; sourceTree = "<group>"; };
 		EFE5828C26370AC20048BCEF /* ExtensionUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIButton.swift; sourceTree = "<group>"; };
+		EFE5829C26371B2C0048BCEF /* ExtensionUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUILabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 				EFE582782636E8A90048BCEF /* ExtensionUIViewController.swift */,
 				EF79028F2625B52600D0D531 /* ExtensionFloat.swift */,
 				EFBB25B6262845F2005464C6 /* ExtensionUITextField.swift */,
+				EFE5829C26371B2C0048BCEF /* ExtensionUILabel.swift */,
 				EFE5828C26370AC20048BCEF /* ExtensionUIButton.swift */,
 				EFB8D9A82629A7C2003B62B7 /* ExtensionString.swift */,
 			);
@@ -405,6 +408,7 @@
 				EF7902902625B52600D0D531 /* ExtensionFloat.swift in Sources */,
 				EF79029A2625C6AC00D0D531 /* FixerViewController.swift in Sources */,
 				EF7902232620969E00D0D531 /* WeatherViewController.swift in Sources */,
+				EFE5829D26371B2C0048BCEF /* ExtensionUILabel.swift in Sources */,
 				EFB8D9B82629DA4C003B62B7 /* GoogleTranslateAPI.swift in Sources */,
 				EF79021F2620969E00D0D531 /* AppDelegate.swift in Sources */,
 				EFDD961726287EA000EDD5F5 /* UnsplashAPI.swift in Sources */,

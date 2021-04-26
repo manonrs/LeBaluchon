@@ -13,6 +13,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var cityPicture: UIImageView!
+    @IBOutlet weak var feelsLikeLabel: UILabel!
     
     var nyWeather: MainWeatherInfo?
     var lyonWeather: MainWeatherInfo?
@@ -83,7 +84,13 @@ class WeatherViewController: UIViewController {
         self.iconImageView.loadIcon(first.icon)
         self.descriptionLabel.text = first.description.capitalizingFirstLetter()
         self.cityPicture.loadCityImage(new2.urls.regular)
+        self.feelsLikeLabel.text = "Ressenti : \(new.main.feels_like.editMaxDigitTo(1)) °C"
+        self.tempLabel.adShadow()
+        self.descriptionLabel.adShadow()
+        self.feelsLikeLabel.adShadow()
     }
+    
+
     
     @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
