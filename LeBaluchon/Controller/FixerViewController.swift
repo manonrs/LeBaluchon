@@ -32,6 +32,7 @@ class FixerViewController: UIViewController {
                     self?.updateUI()
                 }
             case .failure(let error):
+                self?.showAlert()
                 print("error: \(error)") // Afficher UIAlert à la plae
             }
         }

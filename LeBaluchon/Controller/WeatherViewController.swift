@@ -34,6 +34,7 @@ class WeatherViewController: UIViewController {
                     self?.updateUI(cityWeather)
                 }
             case .failure(let error):
+                self?.showAlert()
                 print("error: \(error)")
             }
         }
@@ -49,6 +50,7 @@ class WeatherViewController: UIViewController {
                     self?.fetchCityPicture(lyonAlbumId, self?.lyonWeather)
                 }
             case .failure(let error):
+                self?.showAlert()
                 print("error: \(error)") // Afficher UIAlert à la place
             }
         }
@@ -64,6 +66,7 @@ class WeatherViewController: UIViewController {
                     self?.fetchCityPicture(nyAlbumId, self?.nyWeather)
                 }
             case .failure(let error):
+                self?.showAlert()
                 print("error: \(error)") // Afficher UIAlert à la place
             }
         }

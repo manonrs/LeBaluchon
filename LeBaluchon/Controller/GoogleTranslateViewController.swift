@@ -31,6 +31,7 @@ class GoogleTranslateViewController: UIViewController {
                     self.updateUI()
                 }
             case .failure(let error):
+                self?.showAlert()
                 print("error: \(error)")
             }
         }
