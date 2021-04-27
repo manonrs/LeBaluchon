@@ -33,25 +33,20 @@ class FixerViewController: UIViewController {
                 }
             case .failure(let error):
                 self?.showAlert()
-                print("error: \(error)") // Afficher UIAlert à la plae
+                print("error: \(error)")
             }
         }
     }
     
     func updateUI() {
-        guard let new = exchangeRate,
+        guard let ratesInfo = exchangeRate,
               let resultToConvert = resultToConvert.text,
               let finalResultToConvert = resultToConvert.floatValue,
-              let number = Float?(finalResultToConvert),
-              let usdRates = new.rates.USD else { return }
-        self.exchangeRateLabel.text = "1 € = \(usdRates.editMaxDigitTo(4)) $"
-        convertedResult.layer.masksToBounds = true
-        convertedResult.layer.cornerRadius = 5
-        print(new.rates)
-        convertedResult.text = "\((usdRates * number).editMaxDigitTo(2)) $"
-        conversionButton.layer.masksToBounds = true
-        conversionButton.layer.cornerRadius = 5
-        conversionButton.addShadow()
+              let usdRates = ratesInfo.rates.USD else { return }
+        self.exchangeRateLabel.text = "1 € = \(usdRates.editMaxDigitTo(4)) $" // A quoi sert le self?
+        conversionButton.addCornerRadius()
+        convertedResult.addCornerRadius()
+        convertedResult.text = "\((usdRates * finalResultToConvert).editMaxDigitTo(2)) $"
     }
     
     @IBAction func didTapConversionButton(_ sender: UIButton) {

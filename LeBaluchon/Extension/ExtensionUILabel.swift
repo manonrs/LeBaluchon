@@ -16,4 +16,9 @@ extension UILabel {
         self.layer.shadowRadius = 2
         self.layer.shadowColor = UIColor.black.cgColor
     }
+    func addCornerRadius() {
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 5
+    }
+    
 }

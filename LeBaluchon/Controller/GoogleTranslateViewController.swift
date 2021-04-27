@@ -38,15 +38,11 @@ class GoogleTranslateViewController: UIViewController {
     }
     
     func updateUI() {
-        textToTranslate.layer.masksToBounds = true
-        textToTranslate.layer.cornerRadius = 5
+        textToTranslate.addCornerRadius()
+        translateButton.addCornerRadius()
+        finalText.addCornerRadius()
         finalText.isEditable = false
-        finalText.layer.masksToBounds = true
-        finalText.layer.cornerRadius = 5
         finalText.text = text?.data.translations.first?.translatedText.replace(target: "&#39;", withString: "'").capitalizingFirstLetter()
-        translateButton.layer.masksToBounds = true
-        translateButton.layer.cornerRadius = 5
-        translateButton.addShadow()
     }
     
     @IBAction func didTapTranslateButton(_ sender: UIButton) {

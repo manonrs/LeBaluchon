@@ -45,6 +45,11 @@ extension UITextView {
 
         self.inputAccessoryView = toolbar
     }
+    
+    func addCornerRadius() {
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 5
+    }
 
     // Default actions:
     @objc func doneButtonTapped() { self.resignFirstResponder() }

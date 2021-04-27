@@ -52,7 +52,7 @@ class WeatherViewController: UIViewController {
                 }
             case .failure(let error):
                 self?.showAlert()
-                print("error: \(error)") // Afficher UIAlert à la place
+                print("error: \(error)")
             }
         }
     }
@@ -82,10 +82,10 @@ class WeatherViewController: UIViewController {
         self.cityNameLabel.text = new.name
         self.tempLabel.text = "\(new.main.temp.editMaxDigitTo(1))°C"
         self.iconImageView.loadIcon(first.icon)
-        self.iconImageView.adShadow()
         self.descriptionLabel.text = first.description.capitalizingFirstLetter()
         self.cityPicture.loadCityImage(new2.urls.regular)
         self.feelsLikeLabel.text = "Ressenti : \(new.main.feels_like.editMaxDigitTo(1)) °C"
+        self.iconImageView.addShadow()
         self.tempLabel.addShadow()
         self.descriptionLabel.addShadow()
         self.feelsLikeLabel.addShadow()
