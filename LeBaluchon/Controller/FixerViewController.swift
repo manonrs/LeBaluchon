@@ -49,6 +49,9 @@ class FixerViewController: UIViewController {
         convertedResult.layer.cornerRadius = 5
         print(new.rates)
         convertedResult.text = "\((usdRates * number).editMaxDigitTo(2)) $"
+        conversionButton.layer.masksToBounds = true
+        conversionButton.layer.cornerRadius = 5
+        conversionButton.addShadow()
     }
     
     @IBAction func didTapConversionButton(_ sender: UIButton) {
