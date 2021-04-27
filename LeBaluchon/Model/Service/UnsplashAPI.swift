@@ -8,7 +8,7 @@
 import Foundation
 
 class UnsplashAPI: HandleResponseDelegate {
-    //    let lyonAlbumId = "426804"
+//    let lyonAlbumId = "426804"
     let lyonAlbumId = "21328203"
     let nyAlbumId = "3541178"
     
@@ -19,7 +19,7 @@ class UnsplashAPI: HandleResponseDelegate {
     }
     
     func loadCityID (_ collectionsID: String) -> String {
-        let stringUrl = "https://api.unsplash.com/collections/\(collectionsID)/photos/?client_id=ZZcw5MCFUWruFnW_bbcFvt-pg8spng6qgx5oCyNHQ0I&orientation=portrait"
+        let stringUrl = "https://api.unsplash.com/collections/\(collectionsID)/photos/?client_id=ZZcw5MCFUWruFnW_bbcFvt-pg8spng6qgx5oCyNHQ0I"
         return stringUrl
     }
     

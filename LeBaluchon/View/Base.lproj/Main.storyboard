@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="5CV-bK-Ii1">
             <objects>
-                <tabBarController id="cgg-hJ-6m3" sceneMemberID="viewController">
+                <tabBarController id="cgg-hJ-6m3" customClass="CustomTabBarController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ldU-lm-jnw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -141,6 +141,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallPaperPattern1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Sg5-Xg-sbL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ratesChangeIndicator" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYU-Rd-xX1">
                                 <rect key="frame" x="24" y="276.5" width="366" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -212,9 +215,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="U4b-OD-eCQ" firstAttribute="trailing" secondItem="EYd-dc-2ry" secondAttribute="trailing" constant="24" id="02y-yE-fJE"/>
+                            <constraint firstAttribute="bottom" secondItem="Sg5-Xg-sbL" secondAttribute="bottom" id="4VX-dU-CHi"/>
                             <constraint firstItem="BdS-2m-I2P" firstAttribute="top" secondItem="e6i-bK-mcR" secondAttribute="bottom" constant="16" id="54N-YB-a2d"/>
                             <constraint firstItem="PYU-Rd-xX1" firstAttribute="leading" secondItem="U4b-OD-eCQ" secondAttribute="leading" constant="24" id="ARB-bG-gzt"/>
                             <constraint firstItem="KCl-gB-XA5" firstAttribute="top" secondItem="U4b-OD-eCQ" secondAttribute="top" constant="80" id="BkB-cQ-2pm"/>
+                            <constraint firstItem="Sg5-Xg-sbL" firstAttribute="trailing" secondItem="U4b-OD-eCQ" secondAttribute="trailing" id="EaO-yW-6Vz"/>
+                            <constraint firstItem="Sg5-Xg-sbL" firstAttribute="leading" secondItem="U4b-OD-eCQ" secondAttribute="leading" id="G9G-q8-Td8"/>
                             <constraint firstItem="U4b-OD-eCQ" firstAttribute="trailing" secondItem="PYU-Rd-xX1" secondAttribute="trailing" constant="24" id="I4o-7O-Wf9"/>
                             <constraint firstItem="KCl-gB-XA5" firstAttribute="leading" secondItem="U4b-OD-eCQ" secondAttribute="leading" constant="24" id="Ini-IG-2r6"/>
                             <constraint firstItem="lkf-Ut-ww8" firstAttribute="leading" secondItem="KCl-gB-XA5" secondAttribute="trailing" constant="8" id="JqL-sp-UvW"/>
@@ -233,6 +239,7 @@
                             <constraint firstItem="U4b-OD-eCQ" firstAttribute="trailing" secondItem="BdS-2m-I2P" secondAttribute="trailing" constant="24" id="qez-gh-KmB"/>
                             <constraint firstItem="Ob4-hg-DRR" firstAttribute="leading" secondItem="U4b-OD-eCQ" secondAttribute="leading" constant="24" id="rIU-hQ-uIe"/>
                             <constraint firstItem="3ig-6Y-Lkr" firstAttribute="centerX" secondItem="7n0-IT-OVP" secondAttribute="centerX" id="xyg-5E-icl"/>
+                            <constraint firstItem="Sg5-Xg-sbL" firstAttribute="top" secondItem="7n0-IT-OVP" secondAttribute="top" id="yw0-Ij-KgV"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Conversion " image="dollarsign.circle.fill" catalog="system" id="Tmg-f3-LAT"/>
@@ -299,14 +306,14 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ceci est un test" translatesAutoresizingMaskIntoConstraints="NO" id="l95-mv-7O0">
                                 <rect key="frame" x="24" y="215" width="366" height="174"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGu-b1-h1h">
                                 <rect key="frame" x="24" y="615" width="366" height="174"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
