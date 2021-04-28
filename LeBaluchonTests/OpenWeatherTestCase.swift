@@ -19,12 +19,15 @@ class OpenWeatherTestCase: XCTestCase {
             urlSession: URLSessionFake(data: nil, response: nil, error: FakeReponseData.error))
         
         //When:
-        weatherService.fetchWeatherDataFor(weatherService.lyonID) { (result) in
+        weatherService.fetchWeatherDataFor(WeatherId.lyon.cityID) { (result) in
             guard case .failure(let error) = result else {
                 XCTFail("Test request method with an error failed.")
                 return
             }
             XCTAssertNotNil(error)
+            //XCTAssert(error.localizedDescription)
+            //XCTAssertEqual(error.localizedDescription, serviceError.invalidUrl.localizedDescription)
+
         }
     }
     
@@ -34,7 +37,7 @@ class OpenWeatherTestCase: XCTestCase {
             urlSession: URLSessionFake(data: nil, response: nil, error: nil))
         
         // When:
-        weatherService.fetchWeatherDataFor(weatherService.lyonID) { (result) in
+        weatherService.fetchWeatherDataFor(WeatherId.lyon.cityID) { (result) in
             // Then:
             guard case .failure(let error) = result else {
                 XCTFail("Test request method with an error failed.")
@@ -50,7 +53,7 @@ class OpenWeatherTestCase: XCTestCase {
             urlSession: URLSessionFake(data: FakeReponseData.openWeatherCorrectData, response: FakeReponseData.responseK0, error: nil))
         
         // When:
-        weatherService.fetchWeatherDataFor(weatherService.lyonID) { (result) in
+        weatherService.fetchWeatherDataFor(WeatherId.lyon.cityID) { (result) in
             // Then:
             guard case .failure(let error) = result else {
                 XCTFail("Test request method with an error failed.")
@@ -66,7 +69,7 @@ class OpenWeatherTestCase: XCTestCase {
             urlSession: URLSessionFake(data: FakeReponseData.incorrectData, response: FakeReponseData.responseOK, error: nil))
         
         // When:
-        weatherService.fetchWeatherDataFor(weatherService.lyonID) { (result) in
+        weatherService.fetchWeatherDataFor(WeatherId.lyon.cityID) { (result) in
             // Then:
             guard case .failure(let error) = result else {
                 XCTFail("Test request method with an error failed.")
@@ -82,7 +85,7 @@ class OpenWeatherTestCase: XCTestCase {
             urlSession: URLSessionFake(data: FakeReponseData.openWeatherCorrectData, response: FakeReponseData.responseOK, error: nil))
         
         // When:
-        weatherService.fetchWeatherDataFor(weatherService.lyonID) { (result) in
+        weatherService.fetchWeatherDataFor(WeatherId.lyon.cityID) { (result) in
             // Then:
             guard case .success(let success) = result else {
                 XCTFail("Test request method with an error failed.")
@@ -94,7 +97,7 @@ class OpenWeatherTestCase: XCTestCase {
             let name = "New York"
             let description = "ciel dégagé"
             XCTAssertNotNil(success)
-            XCTAssertEqual(name, success.name)
+            XCTAssertEqual(success.name, name)
             XCTAssertEqual(description, success.weather[0].description)
             XCTAssertEqual(icon, success.weather[0].icon)
             XCTAssertEqual(id, success.weather[0].id)

@@ -20,9 +20,7 @@ class FixerApiTestCase: XCTestCase {
     }
 
     func testGetCurrencyShouldPostFailedCompletionIfError() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
+
         // Given:
         let currencyService = FixerApi (
             urlSession: URLSessionFake(data: nil, response: nil, error: FakeReponseData.error))

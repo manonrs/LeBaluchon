@@ -10,7 +10,7 @@ import UIKit
 class FixerViewController: UIViewController {
     
     @IBOutlet weak var resultToConvert: UITextField! {
-        didSet { resultToConvert?.addDoneCancelToolbar() }
+        didSet { resultToConvert?.addDoneToolBar() }
     }
     @IBOutlet weak var conversionButton: UIButton!
     @IBOutlet weak var convertedResult: UILabel!
@@ -25,15 +25,15 @@ class FixerViewController: UIViewController {
     
     func fetchCurrency() {
         fixerApi.fetchCurrencyData() { [weak self] (result) in
-            switch result {
-            case .success(let currencyInfo):
-                self?.exchangeRate = currencyInfo
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let currencyInfo):
+                    self?.exchangeRate = currencyInfo
                     self?.updateUI()
+                case .failure(let error):
+                    print("error fetching currency data for Dollars $ : \(error)")
+                    self?.showAlert()
                 }
-            case .failure(let error):
-                self?.showAlert()
-                print("error: \(error)")
             }
         }
     }
@@ -41,9 +41,9 @@ class FixerViewController: UIViewController {
     func updateUI() {
         guard let ratesInfo = exchangeRate,
               let resultToConvert = resultToConvert.text,
-              let finalResultToConvert = resultToConvert.floatValue,
+              let finalResultToConvert = Float(resultToConvert.replace(target: ",", withString: ".")),
               let usdRates = ratesInfo.rates.USD else { return }
-        self.exchangeRateLabel.text = "1 € = \(usdRates.editMaxDigitTo(4)) $" // A quoi sert le self?
+        exchangeRateLabel.text = "1 € = \(usdRates.editMaxDigitTo(4)) $" 
         conversionButton.addCornerRadius()
         convertedResult.addCornerRadius()
         convertedResult.text = "\((usdRates * finalResultToConvert).editMaxDigitTo(2)) $"

@@ -23,16 +23,19 @@ class GoogleTranslateViewController: UIViewController {
     }
     
     func fetchTranslation() {
-        googleAPI.fetchTranslationData(textToTranslate.text) { (result) in
-            switch result {
-            case .success(let translationInfo):
-                self.text = translationInfo
-                DispatchQueue.main.async {
-                    self.updateUI()
+        //rajouter [weakself]
+        googleAPI.fetchTranslationData(textToTranslate.text) { [weak self] (result) in
+            DispatchQueue.main.async {
+                
+                switch result {
+                case .success(let translationInfo):
+                    self?.text = translationInfo
+                    self?.updateUI()
+                    
+                case .failure(let error):
+                    print("error fetching translation data (fr to en): \(error)")
+                    self?.showAlert()
                 }
-            case .failure(let error):
-                self.showAlert()
-                print("error: \(error)")
             }
         }
     }

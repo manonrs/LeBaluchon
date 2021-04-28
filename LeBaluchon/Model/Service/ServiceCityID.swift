@@ -18,7 +18,7 @@ extension Album {
     var cityID: String? {
         switch self {
         case .lyon :
-            return "21328203" /*"426804"*/
+            return "21328203" /*or "426804"*/
         case .newYork :
             return "3541178"
         }
@@ -31,12 +31,12 @@ enum WeatherId: String {
 }
 
 extension WeatherId {
-    var cityID: String {
+    var cityID: String? {
         switch self {
         case .lyon :
            return "2996944"
         case .newYork :
-            return "3541178"
+            return "5128581"
         }
     }
 }
