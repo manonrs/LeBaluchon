@@ -36,8 +36,8 @@ extension UIImageView {
                 self.image = image
             }
         }.resume()
-        
     }
+    
     func addShadow() {
         self.layer.shadowOffset = CGSize(width: 1, height: 1)
         self.layer.shadowOpacity = 0.8

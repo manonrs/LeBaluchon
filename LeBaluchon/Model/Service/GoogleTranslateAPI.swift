@@ -4,7 +4,6 @@
 //
 //  Created by Manon Russo on 16/04/2021.
 
-
 import Foundation
 
 class GoogleTranslateAPI: HandleResponseDelegate {
@@ -16,7 +15,7 @@ class GoogleTranslateAPI: HandleResponseDelegate {
     }
     
     func loadTextToTranslate (_ text: String) -> String {
-        let stringUrl = "https://translation.googleapis.com/language/translate/v2?key=AIzaSyCwKNT27NlsKfmfj6VtURNCny2oLXbHbUw&target=en&q=\(text)&source=fr"
+        let stringUrl = "https://translation.googleapis.com/language/translate/v2?key=\(APIKey.googleApiKey)&target=en&q=\(text)&source=fr"
         return stringUrl
     }
 

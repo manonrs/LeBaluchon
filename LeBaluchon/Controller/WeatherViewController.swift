@@ -42,12 +42,14 @@ class WeatherViewController: UIViewController {
     }
     
     func fetchLyon() {
-        openWeatherApi.fetchWeatherDataFor(openWeatherApi.lyonID) { [weak self] (result) in
+//        openWeatherApi.fetchWeatherDataFor(openWeatherApi.lyonID) { [weak self] (result) in
+        openWeatherApi.fetchWeatherDataFor(WeatherId.lyon.cityID) { [weak self] (result) in
             switch result {
             case .success(let weatherInfo):
                 self?.lyonWeather = weatherInfo
                 DispatchQueue.main.async {
-                    guard let lyonAlbumId = self?.unsplashAPI.lyonAlbumId else { return }
+//                    guard let lyonAlbumId = self?.unsplashAPI.lyonAlbumId else { return }
+                    guard let lyonAlbumId = Album.lyon.cityID else { return }
                     self?.fetchCityPicture(lyonAlbumId, self?.lyonWeather)
                 }
             case .failure(let error):
@@ -58,12 +60,14 @@ class WeatherViewController: UIViewController {
     }
     
     func fetchNy() {
-        openWeatherApi.fetchWeatherDataFor(openWeatherApi.nyId) { [weak self] (result) in
+        //        openWeatherApi.fetchWeatherDataFor(openWeatherApi.nyId) { [weak self] (result) in
+        openWeatherApi.fetchWeatherDataFor(WeatherId.newYork.cityID) { [weak self] (result) in
             switch result {
             case .success(let weatherInfo):
                 self?.nyWeather = weatherInfo
                 DispatchQueue.main.async {
-                    guard let nyAlbumId = self?.unsplashAPI.nyAlbumId else { return }
+                    guard let nyAlbumId = Album.newYork.cityID else { return }
+                    //                    guard let nyAlbumId = self?.unsplashAPI.nyAlbumId else { return }
                     self?.fetchCityPicture(nyAlbumId, self?.nyWeather)
                 }
             case .failure(let error):
@@ -91,8 +95,6 @@ class WeatherViewController: UIViewController {
         self.feelsLikeLabel.addShadow()
         self.cityNameLabel.addShadow()
     }
-    
-
     
     @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {

@@ -21,7 +21,7 @@ class OpenWeatherAPI: HandleResponseDelegate {
     let nyId = "5128581"
     
     func loadCity(_ cityId: String) -> String {
-        let stringUrl = "https://api.openweathermap.org/data/2.5/weather?id=\(cityId)&appid=2f4240e158347092c4e7a70e148d6ed8&units=metric&lang=fr"
+        let stringUrl = "https://api.openweathermap.org/data/2.5/weather?id=\(cityId)&appid=\(APIKey.weatherApiKey)&units=metric&lang=fr"
         return stringUrl
     }
     
@@ -34,7 +34,7 @@ class OpenWeatherAPI: HandleResponseDelegate {
             
             let result = self.handleResponse(dataType: MainWeatherInfo.self, data, response, error)
             completion(result)
-        })/*.resume()*/
+        })
         task?.resume()
         print("\(openWeatherUrl)")
     }

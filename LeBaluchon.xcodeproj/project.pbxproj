@@ -33,6 +33,8 @@
 		EF79029A2625C6AC00D0D531 /* FixerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7902992625C6AC00D0D531 /* FixerViewController.swift */; };
 		EF7902A22625C6F800D0D531 /* FixerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7902A12625C6F800D0D531 /* FixerApi.swift */; };
 		EF7902A72625C83A00D0D531 /* RateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7902A62625C83A00D0D531 /* RateInfo.swift */; };
+		EF8EB19F263968390048D23C /* ServiceCityID.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8EB19E263968390048D23C /* ServiceCityID.swift */; };
+		EF8EB1A426396B880048D23C /* ServiceAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8EB1A326396B880048D23C /* ServiceAPIKey.swift */; };
 		EFB8D9A92629A7C2003B62B7 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8D9A82629A7C2003B62B7 /* ExtensionString.swift */; };
 		EFB8D9AE2629C8CF003B62B7 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8D9AD2629C8CF003B62B7 /* ServiceError.swift */; };
 		EFB8D9B32629CCEE003B62B7 /* GoogleTranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8D9B22629CCEE003B62B7 /* GoogleTranslateViewController.swift */; };
@@ -102,6 +104,8 @@
 		EF7902992625C6AC00D0D531 /* FixerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerViewController.swift; sourceTree = "<group>"; };
 		EF7902A12625C6F800D0D531 /* FixerApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerApi.swift; sourceTree = "<group>"; };
 		EF7902A62625C83A00D0D531 /* RateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateInfo.swift; sourceTree = "<group>"; };
+		EF8EB19E263968390048D23C /* ServiceCityID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCityID.swift; sourceTree = "<group>"; };
+		EF8EB1A326396B880048D23C /* ServiceAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIKey.swift; sourceTree = "<group>"; };
 		EFB8D9A82629A7C2003B62B7 /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 		EFB8D9AD2629C8CF003B62B7 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		EFB8D9B22629CCEE003B62B7 /* GoogleTranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTranslateViewController.swift; sourceTree = "<group>"; };
@@ -276,6 +280,8 @@
 				EF0C06B126307A8200C8E732 /* HandleResponseDelegate.swift */,
 				EF7902A12625C6F800D0D531 /* FixerApi.swift */,
 				EFDD961626287EA000EDD5F5 /* UnsplashAPI.swift */,
+				EF8EB1A326396B880048D23C /* ServiceAPIKey.swift */,
+				EF8EB19E263968390048D23C /* ServiceCityID.swift */,
 				EFB8D9AD2629C8CF003B62B7 /* ServiceError.swift */,
 				EFB8D9B72629DA4C003B62B7 /* GoogleTranslateAPI.swift */,
 			);
@@ -430,9 +436,11 @@
 				EF7902232620969E00D0D531 /* WeatherViewController.swift in Sources */,
 				EFE5829D26371B2C0048BCEF /* ExtensionUILabel.swift in Sources */,
 				EFB8D9B82629DA4C003B62B7 /* GoogleTranslateAPI.swift in Sources */,
+				EF8EB19F263968390048D23C /* ServiceCityID.swift in Sources */,
 				EF79021F2620969E00D0D531 /* AppDelegate.swift in Sources */,
 				EFDD961726287EA000EDD5F5 /* UnsplashAPI.swift in Sources */,
 				EFDD961C26287EBB00EDD5F5 /* PhotosInfo.swift in Sources */,
+				EF8EB1A426396B880048D23C /* ServiceAPIKey.swift in Sources */,
 				EF7902A72625C83A00D0D531 /* RateInfo.swift in Sources */,
 				EFB8D9B32629CCEE003B62B7 /* GoogleTranslateViewController.swift in Sources */,
 				EF7902212620969E00D0D531 /* SceneDelegate.swift in Sources */,
