@@ -34,7 +34,7 @@ class UnsplashAPI: HandleResponseDelegate {
             
         })
         task?.resume()
-        print("\(unsplashUrl)")
+        print("picture url : \(unsplashUrl)")
     }
     
 }

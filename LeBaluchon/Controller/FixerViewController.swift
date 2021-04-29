@@ -20,6 +20,8 @@ class FixerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        conversionButton.addCornerRadius()
+        convertedResult.addCornerRadius()
         fetchCurrency()
     }
     
@@ -41,11 +43,9 @@ class FixerViewController: UIViewController {
     func updateUI() {
         guard let ratesInfo = exchangeRate,
               let resultToConvert = resultToConvert.text,
-              let finalResultToConvert = Float(resultToConvert.replace(target: ",", withString: ".")),
               let usdRates = ratesInfo.rates.USD else { return }
-        exchangeRateLabel.text = "1 € = \(usdRates.editMaxDigitTo(4)) $" 
-        conversionButton.addCornerRadius()
-        convertedResult.addCornerRadius()
+        exchangeRateLabel.text = "1 € = \(usdRates.editMaxDigitTo(4)) $"
+        guard let finalResultToConvert = Float(resultToConvert.replace(target: ",", withString: ".")) else { return }
         convertedResult.text = "\((usdRates * finalResultToConvert).editMaxDigitTo(2)) $"
     }
     

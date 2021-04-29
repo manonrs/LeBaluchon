@@ -12,7 +12,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="5CV-bK-Ii1">
             <objects>
-                <tabBarController id="cgg-hJ-6m3" customClass="TabBarController" sceneMemberID="viewController">
+                <tabBarController id="cgg-hJ-6m3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ldU-lm-jnw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-526.08695652173913" y="-935.49107142857133"/>
+            <point key="canvasLocation" x="271" y="-584"/>
         </scene>
         <!--FixerViewController-->
         <scene sceneID="sl7-f7-46L">
@@ -144,7 +144,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rainbow.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Sg5-Xg-sbL">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ratesChangeIndicator" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYU-Rd-xX1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1€ = $" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYU-Rd-xX1">
                                 <rect key="frame" x="24" y="276.5" width="366" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -254,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kJm-gI-RN8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-526.08695652173913" y="-293.30357142857139"/>
+            <point key="canvasLocation" x="-374" y="-186"/>
         </scene>
         <!--TranslationController-->
         <scene sceneID="fmc-8d-qZf">
@@ -367,7 +367,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTN-rd-mgS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-526.08695652173913" y="386.38392857142856"/>
+            <point key="canvasLocation" x="932" y="-125"/>
         </scene>
     </scenes>
     <resources>

@@ -12,7 +12,7 @@ class GoogleTranslateViewController: UIViewController {
     @IBOutlet weak var finalText: UITextView!
     @IBOutlet weak var translateButton: UIButton!
     @IBOutlet weak var textToTranslate: UITextView! {
-        didSet { textToTranslate?.addDoneCancelToolbar() }
+        didSet { textToTranslate?.addDoneToolBar() }
     }
     var text: TranslationInfo?
     var googleAPI = GoogleTranslateAPI()
@@ -23,15 +23,12 @@ class GoogleTranslateViewController: UIViewController {
     }
     
     func fetchTranslation() {
-        //rajouter [weakself]
         googleAPI.fetchTranslationData(textToTranslate.text) { [weak self] (result) in
             DispatchQueue.main.async {
-                
                 switch result {
                 case .success(let translationInfo):
                     self?.text = translationInfo
                     self?.updateUI()
-                    
                 case .failure(let error):
                     print("error fetching translation data (fr to en): \(error)")
                     self?.showAlert()

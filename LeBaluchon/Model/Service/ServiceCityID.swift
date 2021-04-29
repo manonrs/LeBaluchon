@@ -7,7 +7,6 @@
 //let nyAlbumId = "3541178"
 
 import Foundation
-//import UIKit
 
 enum Album: String {
     case lyon
@@ -15,7 +14,7 @@ enum Album: String {
 }
 
 extension Album {
-    var cityID: String? {
+    var cityID: String {
         switch self {
         case .lyon :
             return "21328203" /*or "426804"*/
@@ -31,7 +30,7 @@ enum WeatherId: String {
 }
 
 extension WeatherId {
-    var cityID: String? {
+    var cityID: String {
         switch self {
         case .lyon :
            return "2996944"

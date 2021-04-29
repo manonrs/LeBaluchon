@@ -17,6 +17,8 @@ class FakeReponseData {
     static let error = FakeError()
     
     //refactorer avec un type générique
+
+    
     static var fixerCorrectData: Data {
         let bundle = Bundle(for: FakeReponseData.self)
         let url = bundle.url(forResource: "Fixer", withExtension: "json")

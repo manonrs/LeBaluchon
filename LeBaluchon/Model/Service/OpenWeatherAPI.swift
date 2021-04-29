@@ -14,12 +14,7 @@ class OpenWeatherAPI: HandleResponseDelegate {
     init(urlSession: URLSession = URLSession(configuration: .default)) {
         self.urlSession = urlSession
     }
-    
-    //    Créer Enum config(weather(avec lyonId et nyId dedans); currency) + à part une enum APIKey static let apiKey
-    //    Config.Weather.apikey
-//    let lyonID = "2996944"
-//    let nyId = "5128581"
-    
+
     func loadCity(_ cityId: String) -> String {
         let stringUrl = "https://api.openweathermap.org/data/2.5/weather?id=\(cityId)&appid=\(APIKey.weatherApiKey)&units=metric&lang=fr"
         return stringUrl

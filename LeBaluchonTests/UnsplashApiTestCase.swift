@@ -27,7 +27,7 @@ class UnsplashApiTestCase: XCTestCase {
         let photoService = UnsplashAPI (
             urlSession: URLSessionFake(data: nil, response: nil, error: FakeReponseData.error))
         //When:
-        photoService.fetchPhotoDataFor(Album.lyon.cityID!) { (result) in
+        photoService.fetchPhotoDataFor(Album.lyon.cityID) { (result) in
             //Then:
             guard case .failure(let error) = result else {
                 XCTFail("Test request method with an error failed.")
@@ -43,7 +43,7 @@ class UnsplashApiTestCase: XCTestCase {
             urlSession: URLSessionFake(data: nil, response: nil, error: nil))
         
         // When:
-        photoService.fetchPhotoDataFor(Album.lyon.cityID!) { (result) in
+        photoService.fetchPhotoDataFor(Album.lyon.cityID) { (result) in
             // Then:
             guard case .failure(let error) = result else {
                 XCTFail("Test request method with an error failed.")
@@ -59,7 +59,7 @@ class UnsplashApiTestCase: XCTestCase {
             urlSession: URLSessionFake(data: FakeReponseData.unsplashCorrectData, response: FakeReponseData.responseK0, error: nil))
         
         // When:
-        photoService.fetchPhotoDataFor(Album.lyon.cityID!) { (result) in
+        photoService.fetchPhotoDataFor(Album.lyon.cityID) { (result) in
             // Then:
             guard case .failure(let error) = result else {
                 XCTFail("Test request method with an error failed.")
@@ -75,7 +75,7 @@ class UnsplashApiTestCase: XCTestCase {
             urlSession: URLSessionFake(data: FakeReponseData.incorrectData, response: FakeReponseData.responseOK, error: nil))
         
         // When:
-        photoService.fetchPhotoDataFor(Album.lyon.cityID!) { (result) in
+        photoService.fetchPhotoDataFor(Album.lyon.cityID) { (result) in
             // Then:
             guard case .failure(let error) = result else {
                 XCTFail("Test request method with an error failed.")
@@ -91,7 +91,7 @@ class UnsplashApiTestCase: XCTestCase {
             urlSession: URLSessionFake(data: FakeReponseData.unsplashCorrectData, response: FakeReponseData.responseOK, error: nil))
         
         // When:
-        photoService.fetchPhotoDataFor(Album.lyon.cityID!) { (result) in
+        photoService.fetchPhotoDataFor(Album.lyon.cityID) { (result) in
             // Then:
             guard case .success(let success) = result else {
                 XCTFail("Test request method with an error failed.")

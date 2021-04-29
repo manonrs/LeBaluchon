@@ -42,15 +42,14 @@ class WeatherViewController: UIViewController {
     }
     
     func fetchLyon() {
-        openWeatherApi.fetchWeatherDataFor(WeatherId.lyon.cityID!) { [weak self] (result) in
+        openWeatherApi.fetchWeatherDataFor(WeatherId.lyon.cityID) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let weatherInfo):
                     self?.lyonWeather = weatherInfo
                     // guard let lyonAlbumId = self?.unsplashAPI.lyonAlbumId else { return }
                     // remplacé par :
-                    guard let lyonAlbumId = Album.lyon.cityID else { return }
-                    self?.fetchCityPicture(lyonAlbumId, self?.lyonWeather)
+                    self?.fetchCityPicture(Album.lyon.cityID, self?.lyonWeather)
                     
                 case .failure(let error):
                     print("error fetching weather data for Lyon : \(error)")
@@ -61,13 +60,12 @@ class WeatherViewController: UIViewController {
     }
     
     func fetchNy() {
-        openWeatherApi.fetchWeatherDataFor(WeatherId.newYork.cityID!) { [weak self] (result) in
+        openWeatherApi.fetchWeatherDataFor(WeatherId.newYork.cityID) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let weatherInfo):
                     self?.nyWeather = weatherInfo
-                    guard let nyAlbumId = Album.newYork.cityID else { return }
-                    self?.fetchCityPicture(nyAlbumId, self?.nyWeather)
+                    self?.fetchCityPicture(Album.newYork.cityID, self?.nyWeather)
                 case .failure(let error):
                     print("error fetching weather data for NY : \(error)")
                     self?.showAlert()
