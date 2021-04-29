@@ -33,6 +33,11 @@
 		EF79029A2625C6AC00D0D531 /* FixerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7902992625C6AC00D0D531 /* FixerViewController.swift */; };
 		EF7902A22625C6F800D0D531 /* FixerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7902A12625C6F800D0D531 /* FixerApi.swift */; };
 		EF7902A72625C83A00D0D531 /* RateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7902A62625C83A00D0D531 /* RateInfo.swift */; };
+		EF8BF74A263B0B820001D1EB /* SF-Mono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF8BF746263B0B820001D1EB /* SF-Mono-Light.otf */; };
+		EF8BF74B263B0B820001D1EB /* SF-Compact-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF8BF747263B0B820001D1EB /* SF-Compact-Display-Thin.otf */; };
+		EF8BF74C263B0B820001D1EB /* SF-Compact-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF8BF748263B0B820001D1EB /* SF-Compact-Rounded-Ultralight.otf */; };
+		EF8BF74D263B0B820001D1EB /* SF-Compact-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF8BF749263B0B820001D1EB /* SF-Compact-Display-Ultralight.otf */; };
+		EF8BF752263B0B9E0001D1EB /* SF-Mono-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF8BF751263B0B9E0001D1EB /* SF-Mono-Bold.otf */; };
 		EF8EB19F263968390048D23C /* ServiceCityID.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8EB19E263968390048D23C /* ServiceCityID.swift */; };
 		EF8EB1A426396B880048D23C /* ServiceAPIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8EB1A326396B880048D23C /* ServiceAPIKey.swift */; };
 		EFB8D9A92629A7C2003B62B7 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB8D9A82629A7C2003B62B7 /* ExtensionString.swift */; };
@@ -104,6 +109,14 @@
 		EF7902992625C6AC00D0D531 /* FixerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerViewController.swift; sourceTree = "<group>"; };
 		EF7902A12625C6F800D0D531 /* FixerApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerApi.swift; sourceTree = "<group>"; };
 		EF7902A62625C83A00D0D531 /* RateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateInfo.swift; sourceTree = "<group>"; };
+		EF8BF746263B0B820001D1EB /* SF-Mono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Light.otf"; sourceTree = "<group>"; };
+		EF8BF747263B0B820001D1EB /* SF-Compact-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Thin.otf"; sourceTree = "<group>"; };
+		EF8BF748263B0B820001D1EB /* SF-Compact-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
+		EF8BF749263B0B820001D1EB /* SF-Compact-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Display-Ultralight.otf"; sourceTree = "<group>"; };
+		EF8BF751263B0B9E0001D1EB /* SF-Mono-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Mono-Bold.otf"; sourceTree = "<group>"; };
+		EF8BF759263B0CAA0001D1EB /* SF-Compact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact.ttf"; sourceTree = "<group>"; };
+		EF8BF75D263B0E730001D1EB /* SF-Compact-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Text-Heavy.otf"; sourceTree = "<group>"; };
+		EF8BF75E263B0E730001D1EB /* SF-Compact-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Text-Bold.otf"; sourceTree = "<group>"; };
 		EF8EB19E263968390048D23C /* ServiceCityID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCityID.swift; sourceTree = "<group>"; };
 		EF8EB1A326396B880048D23C /* ServiceAPIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPIKey.swift; sourceTree = "<group>"; };
 		EFB8D9A82629A7C2003B62B7 /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
@@ -250,6 +263,14 @@
 				EF79028A2624986100D0D531 /* dollars.jpeg */,
 				EFC1470126385A05008D2365 /* launchscreen.jpg */,
 				EFC146EF26382BD1008D2365 /* starwallpaper.jpeg */,
+				EF8BF747263B0B820001D1EB /* SF-Compact-Display-Thin.otf */,
+				EF8BF75E263B0E730001D1EB /* SF-Compact-Text-Bold.otf */,
+				EF8BF75D263B0E730001D1EB /* SF-Compact-Text-Heavy.otf */,
+				EF8BF749263B0B820001D1EB /* SF-Compact-Display-Ultralight.otf */,
+				EF8BF751263B0B9E0001D1EB /* SF-Mono-Bold.otf */,
+				EF8BF759263B0CAA0001D1EB /* SF-Compact.ttf */,
+				EF8BF748263B0B820001D1EB /* SF-Compact-Rounded-Ultralight.otf */,
+				EF8BF746263B0B820001D1EB /* SF-Mono-Light.otf */,
 				EFC146EA26382AB4008D2365 /* moneyrain.jpeg */,
 				EFC146FC26385601008D2365 /* rainbow.jpeg */,
 				EFE582872636F17C0048BCEF /* frflag.png */,
@@ -391,16 +412,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF8BF74A263B0B820001D1EB /* SF-Mono-Light.otf in Resources */,
+				EF8BF74B263B0B820001D1EB /* SF-Compact-Display-Thin.otf in Resources */,
 				EFC146FD26385601008D2365 /* rainbow.jpeg in Resources */,
 				EF79022B262096A100D0D531 /* LaunchScreen.storyboard in Resources */,
+				EF8BF752263B0B9E0001D1EB /* SF-Mono-Bold.otf in Resources */,
 				EF79028B2624986100D0D531 /* dollars.jpeg in Resources */,
 				EFE582802636F0690048BCEF /* usflag.png in Resources */,
 				EF790228262096A100D0D531 /* Assets.xcassets in Resources */,
 				EFC146F026382BD1008D2365 /* starwallpaper.jpeg in Resources */,
 				EFC146EB26382AB4008D2365 /* moneyrain.jpeg in Resources */,
 				EFC1470226385A05008D2365 /* launchscreen.jpg in Resources */,
+				EF8BF74D263B0B820001D1EB /* SF-Compact-Display-Ultralight.otf in Resources */,
 				EFE582A2263726110048BCEF /* wallPaperPattern1.jpeg in Resources */,
 				EF7902262620969E00D0D531 /* Main.storyboard in Resources */,
+				EF8BF74C263B0B820001D1EB /* SF-Compact-Rounded-Ultralight.otf in Resources */,
 				EFE582882636F17C0048BCEF /* frflag.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
