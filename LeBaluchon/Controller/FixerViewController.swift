@@ -45,6 +45,7 @@ class FixerViewController: UIViewController {
               let resultToConvert = resultToConvert.text,
               let usdRates = ratesInfo.rates.USD else { return }
         exchangeRateLabel.text = "1 € = \(usdRates.editMaxDigitTo(4)) $"
+        
         guard let finalResultToConvert = Float(resultToConvert.replace(target: ",", withString: ".")) else { return }
         convertedResult.text = "\((usdRates * finalResultToConvert).editMaxDigitTo(2)) $"
     }

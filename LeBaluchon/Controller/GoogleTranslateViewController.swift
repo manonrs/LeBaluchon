@@ -19,6 +19,10 @@ class GoogleTranslateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textToTranslate.addCornerRadius()
+        translateButton.addCornerRadius()
+        finalText.addCornerRadius()
+        finalText.isEditable = false
         fetchTranslation()
     }
     
@@ -38,10 +42,6 @@ class GoogleTranslateViewController: UIViewController {
     }
     
     func updateUI() {
-        textToTranslate.addCornerRadius()
-        translateButton.addCornerRadius()
-        finalText.addCornerRadius()
-        finalText.isEditable = false
         finalText.text = text?.data.translations.first?.translatedText.replace(target: "&#39;", withString: "'").capitalizingFirstLetter()
     }
     

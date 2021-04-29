@@ -23,6 +23,11 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        iconImageView.addShadow()
+        tempLabel.addShadow()
+        descriptionLabel.addShadow()
+        feelsLikeLabel.addShadow()
+        cityNameLabel.addShadow()
         fetchLyon()
     }
     
@@ -88,11 +93,6 @@ class WeatherViewController: UIViewController {
         descriptionLabel.text = first.description.capitalizingFirstLetter()
         cityPicture.loadCityImage(new2.urls.regular)
         feelsLikeLabel.text = "Ressenti : \(new.main.feels_like.editMaxDigitTo(1)) °C"
-        iconImageView.addShadow()
-        tempLabel.addShadow()
-        descriptionLabel.addShadow()
-        feelsLikeLabel.addShadow()
-        cityNameLabel.addShadow()
     }
     
     @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
