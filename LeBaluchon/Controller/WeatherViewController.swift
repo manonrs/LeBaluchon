@@ -95,6 +95,10 @@ class WeatherViewController: UIViewController {
         feelsLikeLabel.text = "Ressenti : \(new.main.feels_like.editMaxDigitTo(1)) °C"
     }
     
+    func updatePhoto() {
+        
+    }
+    
     @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             fetchLyon()

@@ -56,7 +56,7 @@ class UnsplashApiTestCase: XCTestCase {
     func testGetPhotoShouldPostFailedCompletionIfIncorrectResponse() throws {
         // Given:
         let photoService = UnsplashAPI (
-            urlSession: URLSessionFake(data: FakeReponseData.unsplashCorrectData, response: FakeReponseData.responseK0, error: nil))
+            urlSession: URLSessionFake(data: FakeReponseData.correctData("Unsplash"), response: FakeReponseData.responseK0, error: nil))
         
         // When:
         photoService.fetchPhotoDataFor(Album.lyon.cityID) { (result) in
@@ -88,7 +88,7 @@ class UnsplashApiTestCase: XCTestCase {
     func testGetCurrencyShouldPostSuccessCompletionIfNoErrorAndCorrectData() throws {
         // Given:
         let photoService = UnsplashAPI (
-            urlSession: URLSessionFake(data: FakeReponseData.unsplashCorrectData, response: FakeReponseData.responseOK, error: nil))
+            urlSession: URLSessionFake(data: FakeReponseData.correctData("Unsplash"), response: FakeReponseData.responseOK, error: nil))
         
         // When:
         photoService.fetchPhotoDataFor(Album.lyon.cityID) { (result) in

@@ -56,7 +56,7 @@ class GoogleAPITestCase: XCTestCase {
     func testGetTranslationShouldPostFailedCompletionIfIncorrectResponse() throws {
         // Given:
         let translateService = GoogleTranslateAPI (
-            urlSession: URLSessionFake(data: FakeReponseData.googleCorrectData, response: FakeReponseData.responseK0, error: nil))
+            urlSession: URLSessionFake(data: FakeReponseData.correctData("Google"), response: FakeReponseData.responseK0, error: nil))
         
         // When:
         translateService.fetchTranslationData("bonjour") { (result) in
@@ -88,7 +88,7 @@ class GoogleAPITestCase: XCTestCase {
     func testGetTranslationShouldPostSuccessCompletionIfNoErrorAndCorrectData() throws {
         // Given:
         let translateService = GoogleTranslateAPI (
-            urlSession: URLSessionFake(data: FakeReponseData.googleCorrectData, response: FakeReponseData.responseOK, error: nil))
+            urlSession: URLSessionFake(data: FakeReponseData.correctData("Google"), response: FakeReponseData.responseOK, error: nil))
         
         // When:
         translateService.fetchTranslationData("bonjour") { (result) in

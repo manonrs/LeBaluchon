@@ -17,35 +17,40 @@ class FakeReponseData {
     static let error = FakeError()
     
     //refactorer avec un type générique
-
-    
-    static var fixerCorrectData: Data {
+    static func correctData(_ ressource: String) -> Data {
         let bundle = Bundle(for: FakeReponseData.self)
-        let url = bundle.url(forResource: "Fixer", withExtension: "json")
-        let data = try! Data(contentsOf: url!)
-        return data
-    }
-        
-    static var openWeatherCorrectData: Data {
-        let bundle = Bundle(for: FakeReponseData.self)
-        let url = bundle.url(forResource: "OpenWeather", withExtension: "json")
+        let url = bundle.url(forResource: ressource, withExtension: "json")
         let data = try! Data(contentsOf: url!)
         return data
     }
     
-    static var unsplashCorrectData: Data {
-        let bundle = Bundle(for: FakeReponseData.self)
-        let url = bundle.url(forResource: "Unsplash", withExtension: "json")
-        let data = try! Data(contentsOf: url!)
-        return data
-    }
-    
-    static var googleCorrectData: Data {
-        let bundle = Bundle(for: FakeReponseData.self)
-        let url = bundle.url(forResource: "Google", withExtension: "json")
-        let data = try! Data(contentsOf: url!)
-        return data
-    }
+//    static var fixerCorrectData: Data {
+//        let bundle = Bundle(for: FakeReponseData.self)
+//        let url = bundle.url(forResource: "Fixer", withExtension: "json")
+//        let data = try! Data(contentsOf: url!)
+//        return data
+//    }
+//        
+//    static var openWeatherCorrectData: Data {
+//        let bundle = Bundle(for: FakeReponseData.self)
+//        let url = bundle.url(forResource: "OpenWeather", withExtension: "json")
+//        let data = try! Data(contentsOf: url!)
+//        return data
+//    }
+//
+//    static var unsplashCorrectData: Data {
+//        let bundle = Bundle(for: FakeReponseData.self)
+//        let url = bundle.url(forResource: "Unsplash", withExtension: "json")
+//        let data = try! Data(contentsOf: url!)
+//        return data
+//    }
+//
+//    static var googleCorrectData: Data {
+//        let bundle = Bundle(for: FakeReponseData.self)
+//        let url = bundle.url(forResource: "Google", withExtension: "json")
+//        let data = try! Data(contentsOf: url!)
+//        return data
+//    }
     
     static let incorrectData = "erreur".data(using: .utf8)!
 }
