@@ -18,3 +18,4 @@ struct DataTranslation: Decodable {
 struct Translations: Decodable {
     let translatedText: String
 }
+
