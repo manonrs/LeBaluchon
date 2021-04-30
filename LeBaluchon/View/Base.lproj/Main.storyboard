@@ -60,8 +60,8 @@
                                 <fontDescription key="fontDescription" name="SFCompact-Bold" family="SF Compact" pointSize="45"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.sun" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ISb-4d-lGB" userLabel="iconImageView">
-                                <rect key="frame" x="258" y="200.5" width="102.5" height="99"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ISb-4d-lGB" userLabel="iconImageView">
+                                <rect key="frame" x="258" y="202" width="100" height="100"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="NH2-jO-L4y"/>
@@ -97,6 +97,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="MAz-B1-utO">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="labelColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -109,7 +113,9 @@
                             <constraint firstItem="ISb-4d-lGB" firstAttribute="top" secondItem="9IP-BC-RO3" secondAttribute="bottom" constant="24" id="Ahh-Mi-A0r"/>
                             <constraint firstItem="8rX-eZ-Mg1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-48" id="Cm2-Td-5vQ"/>
                             <constraint firstItem="MhA-JN-Tyf" firstAttribute="centerX" secondItem="ISb-4d-lGB" secondAttribute="centerX" id="G1A-7q-jEQ"/>
+                            <constraint firstItem="MAz-B1-utO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HtK-9Y-ZwF"/>
                             <constraint firstItem="MhA-JN-Tyf" firstAttribute="top" secondItem="ISb-4d-lGB" secondAttribute="bottom" constant="16" id="IPz-Ys-v8F"/>
+                            <constraint firstItem="MAz-B1-utO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KiK-GK-fMl"/>
                             <constraint firstItem="8rX-eZ-Mg1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LMq-tJ-Lh1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8rX-eZ-Mg1" secondAttribute="bottom" id="N24-E2-MZ6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9IP-BC-RO3" secondAttribute="trailing" constant="8" id="SZ5-xw-lto"/>
@@ -128,6 +134,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Météo" image="sun.max" catalog="system" id="9dN-es-ejo"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="MAz-B1-utO" id="Lxe-52-CPI"/>
                         <outlet property="cityNameLabel" destination="9IP-BC-RO3" id="fYv-8r-5pN"/>
                         <outlet property="cityPicture" destination="8rX-eZ-Mg1" id="EcL-mT-4b2"/>
                         <outlet property="descriptionLabel" destination="MhA-JN-Tyf" id="N8C-WB-9mp"/>
@@ -386,7 +393,6 @@
     </scenes>
     <resources>
         <image name="book.fill" catalog="system" width="128" height="102"/>
-        <image name="cloud.sun" catalog="system" width="128" height="93"/>
         <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>
         <image name="dollarsign.square.fill" catalog="system" width="128" height="114"/>
         <image name="eurosign.square.fill" catalog="system" width="128" height="114"/>

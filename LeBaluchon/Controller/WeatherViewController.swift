@@ -14,6 +14,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var cityPicture: UIImageView!
     @IBOutlet weak var feelsLikeLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var nyWeather: MainWeatherInfo?
     var lyonWeather: MainWeatherInfo?
@@ -61,9 +62,26 @@ class WeatherViewController: UIViewController {
                 }
             }
         }
+
+//        activityIndicator.isHidden = true
+//        cityNameLabel.isHidden = false
+//        tempLabel.isHidden = false
+//        iconImageView.isHidden = false
+//        feelsLikeLabel.isHidden = false
+//        descriptionLabel.isHidden = false
+//        cityPicture.isHidden = false
     }
     
     func fetchNy() {
+        
+//        activityIndicator.isHidden = false
+//        cityNameLabel.isHidden = true
+//        tempLabel.isHidden = true
+//        iconImageView.isHidden = true
+//        feelsLikeLabel.isHidden = true
+//        descriptionLabel.isHidden = true
+//        cityPicture.isHidden = true
+        
         openWeatherApi.fetchWeatherDataFor(WeatherId.newYork.cityID) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
@@ -78,9 +96,23 @@ class WeatherViewController: UIViewController {
             }
             
         }
+//        activityIndicator.isHidden = true
+//        cityNameLabel.isHidden = false
+//        tempLabel.isHidden = false
+//        iconImageView.isHidden = false
+//        feelsLikeLabel.isHidden = false
+//        descriptionLabel.isHidden = false
+//        cityPicture.isHidden = false
     }
     
     func updateUI(_ cityWeather: MainWeatherInfo?) {
+//        activityIndicator.isHidden = false
+//        cityNameLabel.isHidden = true
+//        tempLabel.isHidden = true
+//        iconImageView.isHidden = true
+//        descriptionLabel.isHidden = true
+//        feelsLikeLabel.isHidden = true
+        
         guard let new = cityWeather else { return }
         print(new.name)
         guard let cityWeather = new.weather.first else { return }
@@ -89,12 +121,25 @@ class WeatherViewController: UIViewController {
         iconImageView.loadIcon(cityWeather.icon)
         descriptionLabel.text = cityWeather.description.capitalizingFirstLetter()
         feelsLikeLabel.text = "Ressenti : \(new.main.feels_like.editMaxDigitTo(1)) °C"
+        
+//        activityIndicator.isHidden = true
+//        cityNameLabel.isHidden = false
+//        tempLabel.isHidden = false
+//        iconImageView.isHidden = false
+//        descriptionLabel.isHidden = false
+//        feelsLikeLabel.isHidden = false
     }
     
     func updatePhoto() {
+        activityIndicator.isHidden = false
+        cityPicture.isHidden = true
+        
         guard let photosInfo = self.cityPicID else { return }
         print(photosInfo.urls)
         cityPicture.loadCityImage(photosInfo.urls.regular)
+        
+        activityIndicator.isHidden = true
+        cityPicture.isHidden = false
     }
     
     @IBAction func didChangeSegment(_ sender: UISegmentedControl) {
