@@ -15,6 +15,7 @@ class FixerViewController: UIViewController {
     @IBOutlet weak var conversionButton: UIButton!
     @IBOutlet weak var convertedResult: UILabel!
     @IBOutlet weak var exchangeRateLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var exchangeRate: RateInfo?
     var fixerApi = FixerApi()
     
@@ -23,16 +24,17 @@ class FixerViewController: UIViewController {
         conversionButton.addCornerRadius()
         convertedResult.addCornerRadius()
         fetchCurrency()
-        resultToConvert.text = ""
     }
     
     func fetchCurrency() {
+        activityIndicator.isHidden = false
+        conversionButton.isHidden = true
+        exchangeRateLabel.isHidden = true
         fixerApi.fetchCurrencyData() { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let currencyInfo):
                     self?.exchangeRate = currencyInfo
-                    self?.updateExchangeRateLabel()
                     self?.updateUI()
                 case .failure(let error):
                     print("error fetching currency data for Dollars $ : \(error)")
@@ -40,19 +42,17 @@ class FixerViewController: UIViewController {
                 }
             }
         }
+        activityIndicator.isHidden = true
+        conversionButton.isHidden = false
+        exchangeRateLabel.isHidden = false
     }
     
-    func updateExchangeRateLabel() {
-        guard let ratesInfo = exchangeRate,
-              let usdRates = ratesInfo.rates.USD else { return }
-        exchangeRateLabel.text = "1 € = \(usdRates.editMaxDigitTo(4)) $"
-    }
     
     func updateUI() {
         guard let ratesInfo = exchangeRate,
               let resultToConvert = resultToConvert.text,
               let usdRates = ratesInfo.rates.USD else { return }
-//        exchangeRateLabel.text = "1 € = \(usdRates.editMaxDigitTo(4)) $"
+        exchangeRateLabel.text = "1 € = \(usdRates.editMaxDigitTo(4)) $"
         guard let finalResultToConvert = Float(resultToConvert.replace(target: ",", withString: ".")) else { return }
         convertedResult.text = "\((usdRates * finalResultToConvert).editMaxDigitTo(2)) $"
     }

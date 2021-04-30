@@ -225,10 +225,14 @@
                                 <fontDescription key="fontDescription" name="SFCompact-Regular" family="SF Compact" pointSize="28"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="lTS-PT-FxB">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U4b-OD-eCQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="lTS-PT-FxB" firstAttribute="centerX" secondItem="7n0-IT-OVP" secondAttribute="centerX" id="3ft-vc-f2V"/>
                             <constraint firstAttribute="bottom" secondItem="Sg5-Xg-sbL" secondAttribute="bottom" id="4VX-dU-CHi"/>
                             <constraint firstItem="BdS-2m-I2P" firstAttribute="top" secondItem="e6i-bK-mcR" secondAttribute="bottom" constant="16" id="54N-YB-a2d"/>
                             <constraint firstItem="PYU-Rd-xX1" firstAttribute="leading" secondItem="U4b-OD-eCQ" secondAttribute="leading" constant="24" id="ARB-bG-gzt"/>
@@ -253,6 +257,7 @@
                             <constraint firstItem="3ig-6Y-Lkr" firstAttribute="centerY" secondItem="7n0-IT-OVP" secondAttribute="centerY" id="iWM-XG-8Vc"/>
                             <constraint firstItem="U4b-OD-eCQ" firstAttribute="trailing" secondItem="BdS-2m-I2P" secondAttribute="trailing" constant="24" id="qez-gh-KmB"/>
                             <constraint firstItem="Ob4-hg-DRR" firstAttribute="leading" secondItem="U4b-OD-eCQ" secondAttribute="leading" constant="24" id="rIU-hQ-uIe"/>
+                            <constraint firstItem="lTS-PT-FxB" firstAttribute="centerY" secondItem="7n0-IT-OVP" secondAttribute="centerY" id="vcg-zX-5dh"/>
                             <constraint firstItem="U4b-OD-eCQ" firstAttribute="trailing" secondItem="3ig-6Y-Lkr" secondAttribute="trailing" constant="140" id="yN3-SR-h4b"/>
                             <constraint firstItem="Sg5-Xg-sbL" firstAttribute="top" secondItem="7n0-IT-OVP" secondAttribute="top" id="yw0-Ij-KgV"/>
                             <constraint firstItem="U4b-OD-eCQ" firstAttribute="trailing" secondItem="e6i-bK-mcR" secondAttribute="trailing" constant="24" id="yxN-on-bte"/>
@@ -260,6 +265,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Conversion " image="dollarsign.circle.fill" catalog="system" id="Tmg-f3-LAT"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="lTS-PT-FxB" id="Phn-yT-9bN"/>
                         <outlet property="conversionButton" destination="3ig-6Y-Lkr" id="sr9-Qw-8M9"/>
                         <outlet property="convertedResult" destination="BdS-2m-I2P" id="rbi-HE-hQp"/>
                         <outlet property="exchangeRateLabel" destination="PYU-Rd-xX1" id="pAj-E8-hKo"/>
