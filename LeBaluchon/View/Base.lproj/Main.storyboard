@@ -274,7 +274,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallPaperPattern1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="sQo-hA-PL3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wallPaperPattern1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="sQo-hA-PL3">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -346,7 +346,7 @@
                             <constraint firstItem="XXh-9y-W8H" firstAttribute="leading" secondItem="zf0-K3-zYM" secondAttribute="leading" constant="24" id="CW4-6X-bDJ"/>
                             <constraint firstItem="3vC-Rd-bzM" firstAttribute="top" secondItem="FKl-Z2-P4n" secondAttribute="bottom" constant="48" id="EJC-cF-gfM"/>
                             <constraint firstItem="sIf-7w-bIy" firstAttribute="leading" secondItem="vsL-J6-98U" secondAttribute="trailing" constant="16" id="GRQ-qs-3f0"/>
-                            <constraint firstItem="sQo-hA-PL3" firstAttribute="leading" secondItem="zf0-K3-zYM" secondAttribute="leading" id="HGa-jX-o6H"/>
+                            <constraint firstItem="sQo-hA-PL3" firstAttribute="leading" secondItem="J1V-Db-xtN" secondAttribute="leading" id="HGa-jX-o6H"/>
                             <constraint firstItem="FKl-Z2-P4n" firstAttribute="centerY" secondItem="J1V-Db-xtN" secondAttribute="centerY" id="HNo-VL-cfE"/>
                             <constraint firstItem="zf0-K3-zYM" firstAttribute="trailing" secondItem="FKl-Z2-P4n" secondAttribute="trailing" constant="130" id="Hq6-5A-EbD"/>
                             <constraint firstItem="sIf-7w-bIy" firstAttribute="top" secondItem="zf0-K3-zYM" secondAttribute="top" constant="80" id="I9M-bc-F2g"/>
@@ -365,7 +365,7 @@
                             <constraint firstItem="vsL-J6-98U" firstAttribute="top" secondItem="zf0-K3-zYM" secondAttribute="top" constant="80" id="srO-Oa-dak"/>
                             <constraint firstItem="l95-mv-7O0" firstAttribute="top" secondItem="sIf-7w-bIy" secondAttribute="bottom" constant="16" id="vm0-Dx-9qG"/>
                             <constraint firstItem="l95-mv-7O0" firstAttribute="top" secondItem="vsL-J6-98U" secondAttribute="bottom" constant="16" id="xAD-sH-VEs"/>
-                            <constraint firstItem="sQo-hA-PL3" firstAttribute="trailing" secondItem="zf0-K3-zYM" secondAttribute="trailing" id="ykL-HQ-VqJ"/>
+                            <constraint firstItem="sQo-hA-PL3" firstAttribute="trailing" secondItem="J1V-Db-xtN" secondAttribute="trailing" id="ykL-HQ-VqJ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Traduction" image="book.fill" catalog="system" id="QuW-1C-EeM"/>

@@ -37,7 +37,7 @@ class WeatherViewController: UIViewController {
                 switch result {
                 case .success(let photoInfo):
                     self?.cityPicID = photoInfo.randomElement()
-                    self?.updateUI(cityWeather)
+                    self?.updatePhoto()
                 case .failure(let error):
                     print("error fetching photo data : \(error)")
                     self?.showAlert()
@@ -52,8 +52,7 @@ class WeatherViewController: UIViewController {
                 switch result {
                 case .success(let weatherInfo):
                     self?.lyonWeather = weatherInfo
-                    // guard let lyonAlbumId = self?.unsplashAPI.lyonAlbumId else { return }
-                    // remplacé par :
+                    self?.updateUI(self?.lyonWeather)
                     self?.fetchCityPicture(Album.lyon.cityID, self?.lyonWeather)
                     
                 case .failure(let error):
@@ -70,6 +69,7 @@ class WeatherViewController: UIViewController {
                 switch result {
                 case .success(let weatherInfo):
                     self?.nyWeather = weatherInfo
+                    self?.updateUI(self?.nyWeather)
                     self?.fetchCityPicture(Album.newYork.cityID, self?.nyWeather)
                 case .failure(let error):
                     print("error fetching weather data for NY : \(error)")
@@ -82,21 +82,19 @@ class WeatherViewController: UIViewController {
     
     func updateUI(_ cityWeather: MainWeatherInfo?) {
         guard let new = cityWeather else { return }
-        guard let new2 = self.cityPicID else { return }
-        print(new2.urls)
         print(new.name)
-        // enlever les selfs
-        guard let first = new.weather.first else { return }
+        guard let cityWeather = new.weather.first else { return }
         cityNameLabel.text = new.name
         tempLabel.text = "\(new.main.temp.editMaxDigitTo(1))°C"
-        iconImageView.loadIcon(first.icon)
-        descriptionLabel.text = first.description.capitalizingFirstLetter()
-        cityPicture.loadCityImage(new2.urls.regular)
+        iconImageView.loadIcon(cityWeather.icon)
+        descriptionLabel.text = cityWeather.description.capitalizingFirstLetter()
         feelsLikeLabel.text = "Ressenti : \(new.main.feels_like.editMaxDigitTo(1)) °C"
     }
     
     func updatePhoto() {
-        
+        guard let photosInfo = self.cityPicID else { return }
+        print(photosInfo.urls)
+        cityPicture.loadCityImage(photosInfo.urls.regular)
     }
     
     @IBAction func didChangeSegment(_ sender: UISegmentedControl) {

@@ -14,6 +14,8 @@ extension String {
     
     func capitalizingFirstLetter() -> String {
             return prefix(1).capitalized + dropFirst()
+        /// Example : translating "Bonjour" to "Hello"
+        /// prefix(1).capitalized is "H", dropFirst() is "ello"
         }
 
 //        mutating func capitalizeFirstLetter() {
