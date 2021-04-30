@@ -9,9 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SF-Compact-Text-Heavy.otf">
-            <string>SFCompactText-Heavy</string>
-        </array>
         <array key="SF-Compact.ttf">
             <string>SFCompact-Bold</string>
             <string>SFCompact-Light</string>
@@ -60,7 +57,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="lzg-TX-0jt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="SFCompactText-Heavy" family="SF Compact Text" pointSize="38"/>
+                                <fontDescription key="fontDescription" name="SFCompact-Bold" family="SF Compact" pointSize="45"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.sun" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ISb-4d-lGB" userLabel="iconImageView">
