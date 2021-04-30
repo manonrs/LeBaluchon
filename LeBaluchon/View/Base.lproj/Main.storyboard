@@ -313,7 +313,7 @@
                                     <constraint firstAttribute="width" constant="32" id="rnl-ia-oD5"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ceci est un test" translatesAutoresizingMaskIntoConstraints="NO" id="l95-mv-7O0">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Bienvenue !" translatesAutoresizingMaskIntoConstraints="NO" id="l95-mv-7O0">
                                 <rect key="frame" x="24" y="215" width="366" height="186.5"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -332,6 +332,10 @@
                                 <fontDescription key="fontDescription" name="SFCompact-Regular" family="SF Compact" pointSize="28"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ZYN-ib-zms">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="labelColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zf0-K3-zYM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -339,6 +343,7 @@
                             <constraint firstItem="l95-mv-7O0" firstAttribute="leading" secondItem="zf0-K3-zYM" secondAttribute="leading" constant="24" id="00T-fN-O4L"/>
                             <constraint firstItem="FKl-Z2-P4n" firstAttribute="top" secondItem="l95-mv-7O0" secondAttribute="bottom" constant="24" id="1aj-Qm-bad"/>
                             <constraint firstItem="UGu-b1-h1h" firstAttribute="top" secondItem="3vC-Rd-bzM" secondAttribute="bottom" constant="16" id="2Tn-B7-9SD"/>
+                            <constraint firstItem="ZYN-ib-zms" firstAttribute="centerX" secondItem="J1V-Db-xtN" secondAttribute="centerX" id="40v-he-o9m"/>
                             <constraint firstItem="zf0-K3-zYM" firstAttribute="bottom" secondItem="UGu-b1-h1h" secondAttribute="bottom" constant="24" id="683-7J-EhG"/>
                             <constraint firstItem="XXh-9y-W8H" firstAttribute="leading" secondItem="zf0-K3-zYM" secondAttribute="leading" constant="24" id="CW4-6X-bDJ"/>
                             <constraint firstItem="3vC-Rd-bzM" firstAttribute="top" secondItem="FKl-Z2-P4n" secondAttribute="bottom" constant="48" id="EJC-cF-gfM"/>
@@ -354,6 +359,7 @@
                             <constraint firstItem="l95-mv-7O0" firstAttribute="top" secondItem="vsL-J6-98U" secondAttribute="bottom" constant="16" id="fut-ho-Ve0"/>
                             <constraint firstItem="FKl-Z2-P4n" firstAttribute="leading" secondItem="zf0-K3-zYM" secondAttribute="leading" constant="130" id="gDY-CB-WXP"/>
                             <constraint firstItem="3vC-Rd-bzM" firstAttribute="leading" secondItem="XXh-9y-W8H" secondAttribute="trailing" constant="16" id="ixO-xJ-trF"/>
+                            <constraint firstItem="ZYN-ib-zms" firstAttribute="centerY" secondItem="J1V-Db-xtN" secondAttribute="centerY" id="kIb-t3-pmL"/>
                             <constraint firstItem="zf0-K3-zYM" firstAttribute="trailing" secondItem="sIf-7w-bIy" secondAttribute="trailing" constant="24" id="mA7-6N-jaN"/>
                             <constraint firstItem="sQo-hA-PL3" firstAttribute="top" secondItem="J1V-Db-xtN" secondAttribute="top" id="mKl-36-N53"/>
                             <constraint firstItem="vsL-J6-98U" firstAttribute="leading" secondItem="zf0-K3-zYM" secondAttribute="leading" constant="24" id="pW8-Bp-zbd"/>
@@ -367,6 +373,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Traduction" image="book.fill" catalog="system" id="QuW-1C-EeM"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="ZYN-ib-zms" id="LwQ-BT-Swq"/>
                         <outlet property="finalText" destination="UGu-b1-h1h" id="ruf-QB-IBF"/>
                         <outlet property="textToTranslate" destination="l95-mv-7O0" id="PJd-94-qmf"/>
                         <outlet property="translateButton" destination="FKl-Z2-P4n" id="h7g-SP-YHd"/>

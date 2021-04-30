@@ -9,6 +9,7 @@ import UIKit
 
 class GoogleTranslateViewController: UIViewController {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var finalText: UITextView!
     @IBOutlet weak var translateButton: UIButton!
     @IBOutlet weak var textToTranslate: UITextView! {
@@ -27,6 +28,8 @@ class GoogleTranslateViewController: UIViewController {
     }
     
     func fetchTranslation() {
+        translateButton.isHidden = true
+        activityIndicator.isHidden = false
         googleAPI.fetchTranslationData(textToTranslate.text) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
@@ -39,6 +42,8 @@ class GoogleTranslateViewController: UIViewController {
                 }
             }
         }
+        translateButton.isHidden = false
+        activityIndicator.isHidden = true
     }
     
     func updateUI() {

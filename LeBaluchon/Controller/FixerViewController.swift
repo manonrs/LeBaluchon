@@ -23,6 +23,7 @@ class FixerViewController: UIViewController {
         conversionButton.addCornerRadius()
         convertedResult.addCornerRadius()
         fetchCurrency()
+        resultToConvert.text = ""
     }
     
     func fetchCurrency() {
@@ -31,6 +32,7 @@ class FixerViewController: UIViewController {
                 switch result {
                 case .success(let currencyInfo):
                     self?.exchangeRate = currencyInfo
+                    self?.updateExchangeRateLabel()
                     self?.updateUI()
                 case .failure(let error):
                     print("error fetching currency data for Dollars $ : \(error)")
@@ -40,12 +42,17 @@ class FixerViewController: UIViewController {
         }
     }
     
+    func updateExchangeRateLabel() {
+        guard let ratesInfo = exchangeRate,
+              let usdRates = ratesInfo.rates.USD else { return }
+        exchangeRateLabel.text = "1 € = \(usdRates.editMaxDigitTo(4)) $"
+    }
+    
     func updateUI() {
         guard let ratesInfo = exchangeRate,
               let resultToConvert = resultToConvert.text,
               let usdRates = ratesInfo.rates.USD else { return }
-        exchangeRateLabel.text = "1 € = \(usdRates.editMaxDigitTo(4)) $"
-        
+//        exchangeRateLabel.text = "1 € = \(usdRates.editMaxDigitTo(4)) $"
         guard let finalResultToConvert = Float(resultToConvert.replace(target: ",", withString: ".")) else { return }
         convertedResult.text = "\((usdRates * finalResultToConvert).editMaxDigitTo(2)) $"
     }
