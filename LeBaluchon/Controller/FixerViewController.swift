@@ -47,7 +47,6 @@ class FixerViewController: UIViewController {
         exchangeRateLabel.isHidden = false
     }
     
-    
     func updateUI() {
         guard let ratesInfo = exchangeRate,
               let resultToConvert = resultToConvert.text,

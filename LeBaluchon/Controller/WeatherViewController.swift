@@ -33,6 +33,12 @@ class WeatherViewController: UIViewController {
         fetchLyon()
     }
     
+    //faire viewDidApp
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(<#T##animated: Bool##Bool#>)
+        // checker le segment selectionné
+    }
+    
     func fetchCityPicture(_ albumId: String) {
         unsplashAPI.fetchPhotoDataFor(albumId) { [weak self] (result) in
             DispatchQueue.main.async {
