@@ -50,6 +50,7 @@
 		EFBB25B7262845F3005464C6 /* ExtensionUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBB25B6262845F2005464C6 /* ExtensionUITextField.swift */; };
 		EFC146FD26385601008D2365 /* rainbow.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EFC146FC26385601008D2365 /* rainbow.jpeg */; };
 		EFC1470226385A05008D2365 /* launchscreen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EFC1470126385A05008D2365 /* launchscreen.jpg */; };
+		EFC7BEB826401387003FC4BB /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC7BEB726401387003FC4BB /* ExtensionUIView.swift */; };
 		EFDD961726287EA000EDD5F5 /* UnsplashAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDD961626287EA000EDD5F5 /* UnsplashAPI.swift */; };
 		EFDD961C26287EBB00EDD5F5 /* PhotosInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDD961B26287EBB00EDD5F5 /* PhotosInfo.swift */; };
 		EFE582792636E8A90048BCEF /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE582782636E8A90048BCEF /* ExtensionUIViewController.swift */; };
@@ -126,6 +127,7 @@
 		EFBB25B6262845F2005464C6 /* ExtensionUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUITextField.swift; sourceTree = "<group>"; };
 		EFC146FC26385601008D2365 /* rainbow.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rainbow.jpeg; sourceTree = "<group>"; };
 		EFC1470126385A05008D2365 /* launchscreen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launchscreen.jpg; sourceTree = "<group>"; };
+		EFC7BEB726401387003FC4BB /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
 		EFDD961626287EA000EDD5F5 /* UnsplashAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPI.swift; sourceTree = "<group>"; };
 		EFDD961B26287EBB00EDD5F5 /* PhotosInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosInfo.swift; sourceTree = "<group>"; };
 		EFE582782636E8A90048BCEF /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				EF79028F2625B52600D0D531 /* ExtensionFloat.swift */,
 				EFBB25B6262845F2005464C6 /* ExtensionUITextField.swift */,
 				EFE5829C26371B2C0048BCEF /* ExtensionUILabel.swift */,
+				EFC7BEB726401387003FC4BB /* ExtensionUIView.swift */,
 				EFE5828C26370AC20048BCEF /* ExtensionUIButton.swift */,
 				EFB8D9A82629A7C2003B62B7 /* ExtensionString.swift */,
 			);
@@ -459,6 +462,7 @@
 				EF8EB19F263968390048D23C /* ServiceCityID.swift in Sources */,
 				EF79021F2620969E00D0D531 /* AppDelegate.swift in Sources */,
 				EFDD961726287EA000EDD5F5 /* UnsplashAPI.swift in Sources */,
+				EFC7BEB826401387003FC4BB /* ExtensionUIView.swift in Sources */,
 				EFDD961C26287EBB00EDD5F5 /* PhotosInfo.swift in Sources */,
 				EF8EB1A426396B880048D23C /* ServiceAPIKey.swift in Sources */,
 				EF7902A72625C83A00D0D531 /* RateInfo.swift in Sources */,

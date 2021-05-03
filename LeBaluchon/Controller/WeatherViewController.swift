@@ -24,6 +24,7 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /// Setting up the selectedSegmentIndex which loads first.
         iconImageView.addShadow()
         tempLabel.addShadow()
         descriptionLabel.addShadow()
@@ -32,7 +33,7 @@ class WeatherViewController: UIViewController {
         fetchLyon()
     }
     
-    func fetchCityPicture(_ albumId: String, _ cityWeather: MainWeatherInfo?) {
+    func fetchCityPicture(_ albumId: String) {
         unsplashAPI.fetchPhotoDataFor(albumId) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
@@ -55,7 +56,7 @@ class WeatherViewController: UIViewController {
                 case .success(let weatherInfo):
                     self?.lyonWeather = weatherInfo
                     self?.updateUI(self?.lyonWeather)
-                    self?.fetchCityPicture(Album.lyon.cityID, self?.lyonWeather)
+                    self?.fetchCityPicture(Album.lyon.cityID)
                 case .failure(let error):
                     print("error fetching weather data for Lyon : \(error)")
                     self?.showAlert()
@@ -72,7 +73,7 @@ class WeatherViewController: UIViewController {
                 case .success(let weatherInfo):
                     self?.nyWeather = weatherInfo
                     self?.updateUI(self?.nyWeather)
-                    self?.fetchCityPicture(Album.newYork.cityID, self?.nyWeather)
+                    self?.fetchCityPicture(Album.newYork.cityID)
                 case .failure(let error):
                     print("error fetching weather data for NY : \(error)")
                     self?.showAlert()
