@@ -15,6 +15,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var cityPicture: UIImageView!
     @IBOutlet weak var feelsLikeLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var nyWeather: MainWeatherInfo?
     var lyonWeather: MainWeatherInfo?
@@ -30,13 +31,18 @@ class WeatherViewController: UIViewController {
         descriptionLabel.addShadow()
         feelsLikeLabel.addShadow()
         cityNameLabel.addShadow()
-        fetchLyon()
+//        fetchLyon()
     }
-    
+
     //faire viewDidApp
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(<#T##animated: Bool##Bool#>)
-        // checker le segment selectionné
+        super.viewDidAppear(false)
+//         check le segment selectionné
+        if segmentedControl.selectedSegmentIndex == 0 {
+            fetchLyon()
+        } else {
+            fetchNy()
+        }
     }
     
     func fetchCityPicture(_ albumId: String) {

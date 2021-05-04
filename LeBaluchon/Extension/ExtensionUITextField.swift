@@ -13,8 +13,8 @@ extension UITextField {
         toolbar.barStyle = .default
         toolbar.items = [
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
-            UIBarButtonItem(title: "Valider", style: .plain, target: self.target, action: #selector(doneButtonTapped)),
-            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
+            UIBarButtonItem(title: "Fermer", style: .plain, target: self.target, action: #selector(doneButtonTapped))
         ]
         toolbar.sizeToFit()
         self.inputAccessoryView = toolbar
@@ -29,8 +29,8 @@ extension UITextView {
         toolbar.barStyle = .default
         toolbar.items = [
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
-            UIBarButtonItem(title: "Valider", style: .plain, target: self.target, action: #selector(doneButtonTapped)),
-            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
+            UIBarButtonItem(title: "Fermer", style: .plain, target: self.target, action: #selector(doneButtonTapped))
         ]
         toolbar.sizeToFit()
         self.inputAccessoryView = toolbar

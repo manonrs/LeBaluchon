@@ -137,6 +137,7 @@
                         <outlet property="descriptionLabel" destination="MhA-JN-Tyf" id="N8C-WB-9mp"/>
                         <outlet property="feelsLikeLabel" destination="4VP-Tq-CSE" id="f6r-Tm-zp1"/>
                         <outlet property="iconImageView" destination="ISb-4d-lGB" id="tVs-O0-dYc"/>
+                        <outlet property="segmentedControl" destination="GG3-Nw-ggs" id="4sb-C9-vJg"/>
                         <outlet property="tempLabel" destination="lCY-7c-4fB" id="XUu-GT-mBx"/>
                     </connections>
                 </viewController>

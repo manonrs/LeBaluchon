@@ -52,6 +52,7 @@ class GoogleTranslateViewController: UIViewController {
     
     @IBAction func didTapTranslateButton(_ sender: UIButton) {
         fetchTranslation()
+        textToTranslate.doneButtonTapped()
     }
     
 }

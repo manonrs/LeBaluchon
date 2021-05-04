@@ -23,6 +23,11 @@ class FixerViewController: UIViewController {
         super.viewDidLoad()
         conversionButton.addCornerRadius()
         convertedResult.addCornerRadius()
+//        fetchCurrency()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
         fetchCurrency()
     }
     
@@ -58,6 +63,7 @@ class FixerViewController: UIViewController {
     
     @IBAction func didTapConversionButton(_ sender: UIButton) {
         fetchCurrency()
+        resultToConvert.doneButtonTapped()
     }
     
 }
