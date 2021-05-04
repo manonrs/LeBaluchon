@@ -14,13 +14,13 @@ extension UITextField {
         toolbar.items = [
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
-            UIBarButtonItem(title: "Fermer", style: .plain, target: self.target, action: #selector(doneButtonTapped))
+            UIBarButtonItem(title: "Fermer", style: .plain, target: self.target, action: #selector(closeKeyboard))
         ]
         toolbar.sizeToFit()
         self.inputAccessoryView = toolbar
     }
     // Default action:
-    @objc func doneButtonTapped() { self.resignFirstResponder() }
+    @objc func closeKeyboard() { self.resignFirstResponder() }
 }
 
 extension UITextView {
@@ -30,7 +30,7 @@ extension UITextView {
         toolbar.items = [
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
-            UIBarButtonItem(title: "Fermer", style: .plain, target: self.target, action: #selector(doneButtonTapped))
+            UIBarButtonItem(title: "Fermer", style: .plain, target: self.target, action: #selector(closeKeyboard))
         ]
         toolbar.sizeToFit()
         self.inputAccessoryView = toolbar
@@ -42,5 +42,5 @@ extension UITextView {
     }
     
     // Default actions:
-    @objc func doneButtonTapped() { self.resignFirstResponder() }    
+    @objc func closeKeyboard() { self.resignFirstResponder() }    
 }

@@ -21,9 +21,9 @@ class FixerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /// Setting up the view.
         conversionButton.addCornerRadius()
         convertedResult.addCornerRadius()
-//        fetchCurrency()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,10 +35,12 @@ class FixerViewController: UIViewController {
         activityIndicator.isHidden = false
         conversionButton.isHidden = true
         exchangeRateLabel.isHidden = true
+        /// Network call which allowed us to recover the exchange rate from the data
         fixerApi.fetchCurrencyData() { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let currencyInfo):
+                    /// If we get data from the network call, we'll update UI with these data
                     self?.exchangeRate = currencyInfo
                     self?.updateUI()
                 case .failure(let error):
@@ -47,6 +49,7 @@ class FixerViewController: UIViewController {
                 }
             }
         }
+        /// Once we update the UI with the correct data, we hide the loading icon and unhide elements which has been updated
         activityIndicator.isHidden = true
         conversionButton.isHidden = false
         exchangeRateLabel.isHidden = false
@@ -63,7 +66,7 @@ class FixerViewController: UIViewController {
     
     @IBAction func didTapConversionButton(_ sender: UIButton) {
         fetchCurrency()
-        resultToConvert.doneButtonTapped()
+        resultToConvert.closeKeyboard()
     }
     
 }

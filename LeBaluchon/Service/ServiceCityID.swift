@@ -3,8 +3,6 @@
 //  LeBaluchon
 //
 //  Created by Manon Russo on 28/04/2021.
-//let lyonAlbumId = "21328203"
-//let nyAlbumId = "3541178"
 
 import Foundation
 

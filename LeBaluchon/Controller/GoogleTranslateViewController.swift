@@ -20,6 +20,7 @@ class GoogleTranslateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /// Setting up the view.
         textToTranslate.addCornerRadius()
         translateButton.addCornerRadius()
         finalText.addCornerRadius()
@@ -52,7 +53,7 @@ class GoogleTranslateViewController: UIViewController {
     
     @IBAction func didTapTranslateButton(_ sender: UIButton) {
         fetchTranslation()
-        textToTranslate.doneButtonTapped()
+        textToTranslate.closeKeyboard()
     }
     
 }

@@ -31,7 +31,7 @@ class UnsplashAPI: ServiceDecoder {
             
         })
         task?.resume()
-        print("picture url : \(unsplashUrl)")
+        print("picture url request: \(unsplashUrl)")
     }
     
 }
