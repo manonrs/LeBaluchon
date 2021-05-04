@@ -25,7 +25,7 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /// Setting up the selectedSegmentIndex which loads first.
+        /// Setting up the view.
         iconImageView.addShadow()
         tempLabel.addShadow()
         descriptionLabel.addShadow()
@@ -33,10 +33,8 @@ class WeatherViewController: UIViewController {
         cityNameLabel.addShadow()
     }
 
-    //faire viewDidApp
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
-//         check le segment selectionné
         if segmentedControl.selectedSegmentIndex == 0 {
             fetchLyon()
         } else {

@@ -7,10 +7,7 @@
 
 import Foundation
 
-class UnsplashAPI: HandleResponseDelegate {
-//    let lyonAlbumId = "426804"
-//    let lyonAlbumId = "21328203"
-//    let nyAlbumId = "3541178"
+class UnsplashAPI: ServiceDecoder {
     
     private var task: URLSessionDataTask?
     private var urlSession: URLSession

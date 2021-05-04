@@ -8,7 +8,7 @@
 import Foundation
 // TODO: Faire un protocole qui implémente cette méthode, avec une implémentation par défaut, juste conformer les fichiers au protocole pour accéder à la méthode handleResponse()
 
-class HandleResponseDelegate /* renommer pour serviceDecoder ou serviceAPI*/ {
+class ServiceDecoder {
     func handleResponse<T>(dataType: T.Type, _ data: Data?, _ response: URLResponse?, _ error: Error?) -> Result<T, ServiceError> where T:Decodable {
         if let error = error {
             return .failure(.errorFromAPI(error.localizedDescription))

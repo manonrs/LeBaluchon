@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FixerApi: HandleResponseDelegate {
+class FixerApi: ServiceDecoder {
     private var task: URLSessionDataTask?
     private var urlSession: URLSession
     init(urlSession: URLSession = URLSession(configuration: .default)) {

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF0C06B226307A8200C8E732 /* HandleResponseDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0C06B126307A8200C8E732 /* HandleResponseDelegate.swift */; };
+		EF0C06B226307A8200C8E732 /* ServiceDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0C06B126307A8200C8E732 /* ServiceDecoder.swift */; };
 		EF0C06BA2631762600C8E732 /* Fixer.json in Resources */ = {isa = PBXBuildFile; fileRef = EF0C06B92631762600C8E732 /* Fixer.json */; };
 		EF0C06C2263176D500C8E732 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0C06C1263176D500C8E732 /* FakeResponseData.swift */; };
 		EF6591672632E788005E24F5 /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6591662632E788005E24F5 /* URLSessionFake.swift */; };
@@ -79,7 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EF0C06B126307A8200C8E732 /* HandleResponseDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleResponseDelegate.swift; sourceTree = "<group>"; };
+		EF0C06B126307A8200C8E732 /* ServiceDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDecoder.swift; sourceTree = "<group>"; };
 		EF0C06B92631762600C8E732 /* Fixer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fixer.json; sourceTree = "<group>"; };
 		EF0C06C1263176D500C8E732 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
 		EF6591662632E788005E24F5 /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
@@ -189,6 +189,7 @@
 				EF790258262099AC00D0D531 /* Ressources */,
 				EF79022C262096A100D0D531 /* Info.plist */,
 				EFBB25BB26284658005464C6 /* Extension */,
+				EFBB25BC262846A2005464C6 /* Service */,
 				EF7902562620994100D0D531 /* Model */,
 				EF7902572620994500D0D531 /* View */,
 				EF7902542620992F00D0D531 /* Controller */,
@@ -235,7 +236,6 @@
 		EF7902562620994100D0D531 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EFBB25BC262846A2005464C6 /* Service */,
 				EF7902722620A0E900D0D531 /* MainWeatherInfo.swift */,
 				EF7902A62625C83A00D0D531 /* RateInfo.swift */,
 				EFDD961B26287EBB00EDD5F5 /* PhotosInfo.swift */,
@@ -295,7 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				EF79025926209A5700D0D531 /* OpenWeatherAPI.swift */,
-				EF0C06B126307A8200C8E732 /* HandleResponseDelegate.swift */,
+				EF0C06B126307A8200C8E732 /* ServiceDecoder.swift */,
 				EF7902A12625C6F800D0D531 /* FixerApi.swift */,
 				EFDD961626287EA000EDD5F5 /* UnsplashAPI.swift */,
 				EF8EB1A326396B880048D23C /* ServiceAPIKey.swift */,
@@ -475,7 +475,7 @@
 				EF79027B26245B0C00D0D531 /* ExtensionUIImageView.swift in Sources */,
 				EFB8D9BD2629DAA2003B62B7 /* TranslationInfo.swift in Sources */,
 				EFE582792636E8A90048BCEF /* ExtensionUIViewController.swift in Sources */,
-				EF0C06B226307A8200C8E732 /* HandleResponseDelegate.swift in Sources */,
+				EF0C06B226307A8200C8E732 /* ServiceDecoder.swift in Sources */,
 				EFB8D9A92629A7C2003B62B7 /* ExtensionString.swift in Sources */,
 				EF7902732620A0E900D0D531 /* MainWeatherInfo.swift in Sources */,
 			);

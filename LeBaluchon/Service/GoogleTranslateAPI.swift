@@ -6,7 +6,7 @@
 
 import Foundation
 
-class GoogleTranslateAPI: HandleResponseDelegate {
+class GoogleTranslateAPI: ServiceDecoder {
 
     private var task: URLSessionDataTask?
     private var urlSession: URLSession
