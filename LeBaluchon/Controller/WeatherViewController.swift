@@ -31,7 +31,6 @@ class WeatherViewController: UIViewController {
         descriptionLabel.addShadow()
         feelsLikeLabel.addShadow()
         cityNameLabel.addShadow()
-//        fetchLyon()
     }
 
     //faire viewDidApp
