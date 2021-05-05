@@ -16,8 +16,9 @@ class FixerViewController: UIViewController {
     @IBOutlet weak var convertedResult: UILabel!
     @IBOutlet weak var exchangeRateLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var exchangeRate: RateInfo?
-    var fixerApi = FixerApi()
+//    var fixerApi = FixerApi()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +36,13 @@ class FixerViewController: UIViewController {
         activityIndicator.isHidden = false
         conversionButton.isHidden = true
         exchangeRateLabel.isHidden = true
-        /// Network call which allowed us to recover the exchange rate from the data
-        fixerApi.fetchCurrencyData() { [weak self] (result) in
+        /// Network call which allowed us to recover the exchange rate from the data.
+        FixerApi.shared.fetchCurrencyData() { [weak self] (result) in
             DispatchQueue.main.async {
+                // mettre les isHidden ici
                 switch result {
                 case .success(let currencyInfo):
-                    /// If we get data from the network call, we'll update UI with these data
+                    /// If we get data from the network call, we'll update UI with these recovered data (exchangeRate and currencyInfo has same structure so values can match).
                     self?.exchangeRate = currencyInfo
                     self?.updateUI()
                 case .failure(let error):
@@ -49,13 +51,14 @@ class FixerViewController: UIViewController {
                 }
             }
         }
-        /// Once we update the UI with the correct data, we hide the loading icon and unhide elements which has been updated
+        /// Once we update the UI with the correct data, we hide the loading icon and unhide elements which has been updated.
         activityIndicator.isHidden = true
         conversionButton.isHidden = false
         exchangeRateLabel.isHidden = false
     }
     
     func updateUI() {
+        /// Recovering the corresponding data.
         guard let ratesInfo = exchangeRate,
               let resultToConvert = resultToConvert.text,
               let usdRates = ratesInfo.rates.USD else { return }

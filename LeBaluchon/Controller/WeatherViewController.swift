@@ -20,8 +20,8 @@ class WeatherViewController: UIViewController {
     var nyWeather: MainWeatherInfo?
     var lyonWeather: MainWeatherInfo?
     var cityPicID: PhotosInfo?
-    var openWeatherApi = OpenWeatherAPI()
-    var unsplashAPI = UnsplashAPI()
+//    var openWeatherApi = OpenWeatherAPI()
+//    var unsplashAPI = UnsplashAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,17 +46,17 @@ class WeatherViewController: UIViewController {
     func fetchLyon() {
         activityIndicator.isHidden = false
         /// Network call of the weather data for the city indicated in parameter
-        openWeatherApi.fetchWeatherDataFor(WeatherId.lyon.cityID) { [weak self] (result) in
+        OpenWeatherAPI.shared.fetchWeatherDataFor(WeatherId.lyon.cityID) { [weak self] (result) in
             DispatchQueue.main.async { /// About to modifiy the view in both case
                 switch result {
                 case .success(let weatherInfo):
-                    /// If we got data from the network call, we'll call updateUI() with parameters define from the data we previously get (matching our MainWeatherInfo struct)
+                    /// If we got data from the network call, we'll call updateUI() with parameters define from the data we previously get (matching our MainWeatherInfo struct).
                     self?.lyonWeather = weatherInfo
                     self?.updateUI(self?.lyonWeather)
                     /// and then we'll fetch the city picture for the corresponding city
                     self?.fetchCityPicture(Album.lyon.cityID)
                 case .failure(let error):
-                    /// Displaying an errror for the user with the UIAlert and for the developper in the console with the print.
+                    /// Displaying an errror for the user with the UIAlert and in the console with the print.
                     print("error fetching weather data for Lyon : \(error)")
                     self?.showAlert()
                 }
@@ -67,11 +67,11 @@ class WeatherViewController: UIViewController {
     func fetchNy() {
         activityIndicator.isHidden = false
         /// Network call of the weather data for the city indicated in parameter
-        openWeatherApi.fetchWeatherDataFor(WeatherId.newYork.cityID) { [weak self] (result) in
+        OpenWeatherAPI.shared.fetchWeatherDataFor(WeatherId.newYork.cityID) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let weatherInfo):
-                    /// If we get data from the network call, we'll call updateUI() with parameters define from the data we previously get (matching our MainWeatherInfo struct)
+                    /// If we get data from the network call, we'll call updateUI() with parameters define from the data we previously get (matching our MainWeatherInfo struct).
                     self?.nyWeather = weatherInfo
                     self?.updateUI(self?.nyWeather)
                     /// and then we'll fetch the city picture for the corresponding city
@@ -86,12 +86,12 @@ class WeatherViewController: UIViewController {
     }
     
     func fetchCityPicture(_ albumId: String) {
-        /// Network call of the photo data for the city indicated in parameter (albumId is defined above when fetchCityPicture is called in each fetchLyon() and fetchNy()
-        unsplashAPI.fetchPhotoDataFor(albumId) { [weak self] (result) in
+        /// Network call of the photo data for the city indicated in parameter (albumId is defined above when fetchCityPicture is called in each fetchLyon() and fetchNy().
+        UnsplashAPI.shared.fetchPhotoDataFor(albumId) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let photoInfo):
-                    /// If we get data from the network call, we'll define a randomElement from it (which is a photo collection), and then, we'll call the method updatePhoto()
+                    /// If we get data from the network call, we'll define a randomElement from it (which is a photo collection), and then, we'll call the method updatePhoto().
                     self?.cityPicID = photoInfo.randomElement()
                     self?.updatePhoto()
                 case .failure(let error):
@@ -108,7 +108,7 @@ class WeatherViewController: UIViewController {
               let cityWeather = new.weather.first else { return }
         print("fetching the weather for : \(new.name)")
 
-        ///Then, we're illing the differents label and the icon ImageView with these datas
+        ///Then, we're filling the differents label and the icon ImageView with these datas.
         cityNameLabel.text = new.name
         tempLabel.text = "\(new.main.temp.editMaxDigitTo(1))°C"
         iconImageView.loadIcon(cityWeather.icon)
@@ -120,9 +120,9 @@ class WeatherViewController: UIViewController {
         /// Updating the background image according to the city selectionned thanks to the method loadCityImage().
         guard let photosInfo = self.cityPicID else { return }
         print("picture's URL : \(photosInfo.urls.regular)")
-        /// Updating the cityPicture with the loadCityImage() method taking as parameter the url from the random photo we get by calling fetchPhotoData() in fetchCityPicture()
+        /// Updating the cityPicture with the loadCityImage() method taking as parameter the url from the random photo we get by calling fetchPhotoData() in fetchCityPicture().
         cityPicture.loadCityImage(photosInfo.urls.regular)
-        /// Once the picture is loaded and displayed, we hide the loading icon in background
+        /// Once the picture is loaded and displayed, we hide the loading icon in background.
         activityIndicator.isHidden = true
     }
     

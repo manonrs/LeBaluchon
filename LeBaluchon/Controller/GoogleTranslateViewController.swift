@@ -16,7 +16,7 @@ class GoogleTranslateViewController: UIViewController {
         didSet { textToTranslate?.addDoneToolBar() }
     }
     var text: TranslationInfo?
-    var googleAPI = GoogleTranslateAPI()
+//    var googleAPI = GoogleTranslateAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class GoogleTranslateViewController: UIViewController {
     func fetchTranslation() {
         translateButton.isHidden = true
         activityIndicator.isHidden = false
-        googleAPI.fetchTranslationData(textToTranslate.text) { [weak self] (result) in
+        GoogleTranslateAPI.shared.fetchTranslationData(textToTranslate.text) { [weak self] (result) in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let translationInfo):

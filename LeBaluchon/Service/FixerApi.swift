@@ -8,9 +8,12 @@
 import Foundation
 
 class FixerApi: ServiceDecoder {
+    static let shared = FixerApi()
     private var task: URLSessionDataTask?
-    private var urlSession: URLSession
-    init(urlSession: URLSession = URLSession(configuration: .default)) {
+    private var urlSession: URLSession = URLSession(configuration: .default)
+    private override init() {}
+    
+    init(urlSession: URLSession) {
         self.urlSession = urlSession
     }
     

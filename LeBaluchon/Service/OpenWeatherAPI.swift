@@ -8,10 +8,13 @@
 import UIKit
 
 class OpenWeatherAPI: ServiceDecoder {
-    
+    static let shared = OpenWeatherAPI()
+
     private var task: URLSessionDataTask?
-    private var urlSession: URLSession
-    init(urlSession: URLSession = URLSession(configuration: .default)) {
+    private var urlSession: URLSession = URLSession(configuration: .default)
+    private override init() {}
+
+    init(urlSession: URLSession) {
         self.urlSession = urlSession
     }
 
@@ -24,7 +27,6 @@ class OpenWeatherAPI: ServiceDecoder {
         
         guard let openWeatherUrl = URL(string: loadCity(cityId)) else { return completion(.failure(.invalidUrl)) }
         task?.cancel()
-        
         task = urlSession.dataTask(with: openWeatherUrl, completionHandler: { (data, response, error) in
             
             let result = self.handleResponse(dataType: MainWeatherInfo.self, data, response, error)
