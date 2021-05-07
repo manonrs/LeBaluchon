@@ -1,12 +1,13 @@
 //
-//  ExtensionUITextField.swift
+//  ExtensionUITextView.swift
 //  LeBaluchon
 //
-//  Created by Manon Russo on 15/04/2021.
+//  Created by Manon Russo on 06/05/2021.
 //
 
 import UIKit
-extension UITextField {
+extension UITextView {
+    // This method is defining the button toolbar of the keyboard and its action.
     func addDoneToolBar() {
         let toolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
         toolbar.barStyle = .default
@@ -18,6 +19,12 @@ extension UITextField {
         toolbar.sizeToFit()
         self.inputAccessoryView = toolbar
     }
-    // Default action:
+    
+    func addCornerRadius() {
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 5
+    }
+    
+    // Default actions:
     @objc func closeKeyboard() { self.resignFirstResponder() }
 }

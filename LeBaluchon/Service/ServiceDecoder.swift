@@ -1,5 +1,5 @@
 //
-//  HandleResponseDelegate.swift
+//  ServiceDecoder.swift
 //  LeBaluchon
 //
 //  Created by Manon Russo on 21/04/2021.

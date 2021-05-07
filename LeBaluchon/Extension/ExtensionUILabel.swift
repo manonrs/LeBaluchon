@@ -5,8 +5,6 @@
 //  Created by Manon Russo on 26/04/2021.
 //
 
-import Foundation
-
 import UIKit
 
 extension UILabel {
@@ -14,5 +12,4 @@ extension UILabel {
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 5
     }
-    
 }

@@ -16,13 +16,11 @@ class FakeReponseData {
     class FakeError: Error {}
     static let error = FakeError()
     
-    //refactorer avec un type générique
     static func correctData(_ ressource: String) -> Data {
         let bundle = Bundle(for: FakeReponseData.self)
         let url = bundle.url(forResource: ressource, withExtension: "json")
         let data = try! Data(contentsOf: url!)
         return data
     }
-    
     static let incorrectData = "erreur".data(using: .utf8)!
 }

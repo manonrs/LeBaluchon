@@ -7,17 +7,18 @@
 
 import UIKit
 
-class GoogleTranslateViewController: UIViewController {
+final class GoogleTranslateViewController: UIViewController {
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var finalText: UITextView!
-    @IBOutlet weak var translateButton: UIButton!
-    @IBOutlet weak var textToTranslate: UITextView! {
+    // MARK: Private properties
+    @IBOutlet weak private var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak private var finalText: UITextView!
+    @IBOutlet weak private var translateButton: UIButton!
+    @IBOutlet weak private var textToTranslate: UITextView! {
         didSet { textToTranslate?.addDoneToolBar() }
     }
-    var text: TranslationInfo?
-//    var googleAPI = GoogleTranslateAPI()
+    private var text: TranslationInfo?
     
+    // MARK: Override method
     override func viewDidLoad() {
         super.viewDidLoad()
         /// Setting up the view.
@@ -28,7 +29,8 @@ class GoogleTranslateViewController: UIViewController {
         fetchTranslation()
     }
     
-    func fetchTranslation() {
+    //MARK: Private methods
+    private func fetchTranslation() {
         translateButton.isHidden = true
         activityIndicator.isHidden = false
         GoogleTranslateAPI.shared.fetchTranslationData(textToTranslate.text) { [weak self] (result) in
@@ -41,16 +43,17 @@ class GoogleTranslateViewController: UIViewController {
                     print("error fetching translation data (fr to en): \(error)")
                     self?.showAlert()
                 }
+                self?.translateButton.isHidden = false
+                self?.activityIndicator.isHidden = true
             }
         }
-        translateButton.isHidden = false
-        activityIndicator.isHidden = true
     }
     
-    func updateUI() {
-        finalText.text = text?.data.translations.first?.translatedText.replace(target: "&#39;", withString: "'").capitalizingFirstLetter()
+    private func updateUI() {
+        finalText.text = text?.data.translations.first?.translatedText.replacingOccurrences(of: "&#39;", with: "'").capitalizingFirstLetter()
     }
     
+    // MARK: IBAction
     @IBAction func didTapTranslateButton(_ sender: UIButton) {
         fetchTranslation()
         textToTranslate.closeKeyboard()

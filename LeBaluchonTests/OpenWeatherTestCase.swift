@@ -9,25 +9,17 @@ import XCTest
 @testable import LeBaluchon
 
 class OpenWeatherTestCase: XCTestCase {
-    
     func testGetWeatherShouldPostFailedCompletionIfError() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
      //Given:
         let weatherService = OpenWeatherAPI (
             urlSession: URLSessionFake(data: nil, response: nil, error: FakeReponseData.error))
-        
         //When:
         weatherService.fetchWeatherDataFor(WeatherId.lyon.cityID) { (result) in
             guard case .failure(let error) = result else {
-                XCTFail("Test request method with an error failed.")
+                XCTFail("Test request method with an error (FakeError) failed.")
                 return
             }
             XCTAssertNotNil(error)
-            //XCTAssert(error.localizedDescription)
-            //XCTAssertEqual(error.localizedDescription, serviceError.invalidUrl.localizedDescription)
-
         }
     }
     
@@ -35,12 +27,11 @@ class OpenWeatherTestCase: XCTestCase {
         // Given:
         let weatherService = OpenWeatherAPI (
             urlSession: URLSessionFake(data: nil, response: nil, error: nil))
-        
         // When:
         weatherService.fetchWeatherDataFor(WeatherId.lyon.cityID) { (result) in
             // Then:
             guard case .failure(let error) = result else {
-                XCTFail("Test request method with an error failed.")
+                XCTFail("Test request method with an error (no data) failed.")
                 return
             }
             XCTAssertNotNil(error)
@@ -51,12 +42,11 @@ class OpenWeatherTestCase: XCTestCase {
         // Given:
         let weatherService = OpenWeatherAPI (
             urlSession: URLSessionFake(data: FakeReponseData.correctData("OpenWeather"), response: FakeReponseData.responseK0, error: nil))
-        
         // When:
         weatherService.fetchWeatherDataFor(WeatherId.lyon.cityID) { (result) in
             // Then:
             guard case .failure(let error) = result else {
-                XCTFail("Test request method with an error failed.")
+                XCTFail("Test request method with an error (incorrect response) failed.")
                 return
             }
             XCTAssertNotNil(error)
@@ -67,12 +57,11 @@ class OpenWeatherTestCase: XCTestCase {
         // Given:
         let weatherService = OpenWeatherAPI (
             urlSession: URLSessionFake(data: FakeReponseData.incorrectData, response: FakeReponseData.responseOK, error: nil))
-        
         // When:
         weatherService.fetchWeatherDataFor(WeatherId.lyon.cityID) { (result) in
             // Then:
             guard case .failure(let error) = result else {
-                XCTFail("Test request method with an error failed.")
+                XCTFail("Test request method with an error (incorrect data) failed.")
                 return
             }
             XCTAssertNotNil(error)
@@ -83,12 +72,11 @@ class OpenWeatherTestCase: XCTestCase {
         // Given:
         let weatherService = OpenWeatherAPI (
             urlSession: URLSessionFake(data: FakeReponseData.correctData("OpenWeather"), response: FakeReponseData.responseOK, error: nil))
-        
         // When:
         weatherService.fetchWeatherDataFor(WeatherId.lyon.cityID) { (result) in
             // Then:
             guard case .success(let success) = result else {
-                XCTFail("Test request method with an error failed.")
+                XCTFail("Test request method with data failed.")
                 return
             }
             let id = Float(800.5)
@@ -98,10 +86,10 @@ class OpenWeatherTestCase: XCTestCase {
             let description = "ciel dégagé"
             XCTAssertNotNil(success)
             XCTAssertEqual(success.name, name)
-            XCTAssertEqual(description, success.weather[0].description)
-            XCTAssertEqual(icon, success.weather[0].icon)
-            XCTAssertEqual(id, success.weather[0].id)
-            XCTAssertEqual(temp, success.main.temp)
+            XCTAssertEqual(success.weather[0].description, description)
+            XCTAssertEqual(success.weather[0].icon, icon)
+            XCTAssertEqual(success.weather[0].id, id)
+            XCTAssertEqual(success.main.temp, temp)
         }
     }
     

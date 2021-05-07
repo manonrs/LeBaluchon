@@ -9,22 +9,10 @@ import XCTest
 @testable import LeBaluchon
 
 class FixerApiTestCase: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        
-    }
-
     func testGetCurrencyShouldPostFailedCompletionIfError() throws {
-
         // Given:
         let currencyService = FixerApi (
             urlSession: URLSessionFake(data: nil, response: nil, error: FakeReponseData.error))
-        
         // When:
         currencyService.fetchCurrencyData { (result) in
             // Then:
@@ -40,12 +28,11 @@ class FixerApiTestCase: XCTestCase {
         // Given:
         let currencyService = FixerApi (
             urlSession: URLSessionFake(data: nil, response: nil, error: nil))
-        
         // When:
         currencyService.fetchCurrencyData { (result) in
             // Then:
             guard case .failure(let error) = result else {
-                XCTFail("Test request method with an error failed.")
+                XCTFail("Test request method with an error (no data) failed.")
                 return
             }
             XCTAssertNotNil(error)
@@ -56,12 +43,11 @@ class FixerApiTestCase: XCTestCase {
         // Given:
         let currencyService = FixerApi (
             urlSession: URLSessionFake(data: FakeReponseData.correctData("Fixer"), response: FakeReponseData.responseK0, error: nil))
-        
         // When:
         currencyService.fetchCurrencyData { (result) in
             // Then:
             guard case .failure(let error) = result else {
-                XCTFail("Test request method with an error failed.")
+                XCTFail("Test request method with an error (incorrect response) failed.")
                 return
             }
             XCTAssertNotNil(error)
@@ -72,12 +58,11 @@ class FixerApiTestCase: XCTestCase {
         // Given:
         let currencyService = FixerApi (
             urlSession: URLSessionFake(data: FakeReponseData.incorrectData, response: FakeReponseData.responseOK, error: nil))
-        
         // When:
         currencyService.fetchCurrencyData { (result) in
             // Then:
             guard case .failure(let error) = result else {
-                XCTFail("Test request method with an error failed.")
+                XCTFail("Test request method with an error (incorrect data) failed.")
                 return
             }
             XCTAssertNotNil(error)
@@ -88,21 +73,19 @@ class FixerApiTestCase: XCTestCase {
         // Given:
         let currencyService = FixerApi (
             urlSession: URLSessionFake(data: FakeReponseData.correctData("Fixer"), response: FakeReponseData.responseOK, error: nil))
-        
         // When:
         currencyService.fetchCurrencyData { (result) in
             // Then:
             guard case .success(let success) = result else {
-                XCTFail("Test request method with an error failed.")
+                XCTFail("Test request method with an error (correct data) failed.")
                 return
             }
             let base = "EUR"
             let rates = Float(1.202769)
             XCTAssertNotNil(success)
-            XCTAssertEqual(base, success.base)
-            XCTAssertEqual(rates, success.rates.USD)
-            XCTAssertEqual(base, "EUR")
-
+            XCTAssertEqual(success.base, base)
+            XCTAssertEqual(success.rates.USD, rates)
+            XCTAssertEqual("EUR", base)
         }
     }
     

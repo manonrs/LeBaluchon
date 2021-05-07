@@ -10,6 +10,7 @@
 		EF0C06B226307A8200C8E732 /* ServiceDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0C06B126307A8200C8E732 /* ServiceDecoder.swift */; };
 		EF0C06BA2631762600C8E732 /* Fixer.json in Resources */ = {isa = PBXBuildFile; fileRef = EF0C06B92631762600C8E732 /* Fixer.json */; };
 		EF0C06C2263176D500C8E732 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0C06C1263176D500C8E732 /* FakeResponseData.swift */; };
+		EF5BEEC926442B3F006960DE /* ExtensionUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5BEEC826442B3F006960DE /* ExtensionUITextView.swift */; };
 		EF6591672632E788005E24F5 /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6591662632E788005E24F5 /* URLSessionFake.swift */; };
 		EF65916C263307AB005E24F5 /* OpenWeather.json in Resources */ = {isa = PBXBuildFile; fileRef = EF65916B263307AB005E24F5 /* OpenWeather.json */; };
 		EF65917126331CCC005E24F5 /* OpenWeatherTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF65917026331CCC005E24F5 /* OpenWeatherTestCase.swift */; };
@@ -82,6 +83,7 @@
 		EF0C06B126307A8200C8E732 /* ServiceDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDecoder.swift; sourceTree = "<group>"; };
 		EF0C06B92631762600C8E732 /* Fixer.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fixer.json; sourceTree = "<group>"; };
 		EF0C06C1263176D500C8E732 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
+		EF5BEEC826442B3F006960DE /* ExtensionUITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUITextView.swift; sourceTree = "<group>"; };
 		EF6591662632E788005E24F5 /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
 		EF65916B263307AB005E24F5 /* OpenWeather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OpenWeather.json; sourceTree = "<group>"; };
 		EF65917026331CCC005E24F5 /* OpenWeatherTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherTestCase.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				EF79027A26245B0B00D0D531 /* ExtensionUIImageView.swift */,
 				EFE582782636E8A90048BCEF /* ExtensionUIViewController.swift */,
 				EF79028F2625B52600D0D531 /* ExtensionFloat.swift */,
+				EF5BEEC826442B3F006960DE /* ExtensionUITextView.swift */,
 				EFBB25B6262845F2005464C6 /* ExtensionUITextField.swift */,
 				EFE5829C26371B2C0048BCEF /* ExtensionUILabel.swift */,
 				EFC7BEB726401387003FC4BB /* ExtensionUIView.swift */,
@@ -468,6 +471,7 @@
 				EF7902A72625C83A00D0D531 /* RateInfo.swift in Sources */,
 				EFB8D9B32629CCEE003B62B7 /* GoogleTranslateViewController.swift in Sources */,
 				EF7902212620969E00D0D531 /* SceneDelegate.swift in Sources */,
+				EF5BEEC926442B3F006960DE /* ExtensionUITextView.swift in Sources */,
 				EFE5828D26370AC20048BCEF /* ExtensionUIButton.swift in Sources */,
 				EF7902A22625C6F800D0D531 /* FixerApi.swift in Sources */,
 				EFBB25B7262845F3005464C6 /* ExtensionUITextField.swift in Sources */,

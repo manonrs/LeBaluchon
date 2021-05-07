@@ -9,9 +9,9 @@ import Foundation
 
 class URLSessionFake: URLSession {
     
-    var data: Data?
-    var response: URLResponse?
-    var error: Error?
+    private var data: Data?
+    private var response: URLResponse?
+    private var error: Error?
     
     init(data: Data?, response: URLResponse?, error: Error?) {
         self.data = data
@@ -46,5 +46,6 @@ class URLSessionDataTaskFake: URLSessionDataTask {
     override func resume() {
         completionHandler?(data, urlResponse, responseError)
     }
+    
     override func cancel() {}
 }

@@ -8,10 +8,6 @@
 import Foundation
 
 extension String {
-    func replace(target: String, withString: String) -> String {
-        return self.replacingOccurrences(of: target, with: withString)
-    }
-    
     func capitalizingFirstLetter() -> String {
             return prefix(1).capitalized + dropFirst()
         /// Example : translating "Bonjour" to "Hello"
