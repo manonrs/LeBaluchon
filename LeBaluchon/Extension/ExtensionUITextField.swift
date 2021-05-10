@@ -7,6 +7,7 @@
 
 import UIKit
 extension UITextField {
+    // This method is defining the button toolbar of the keyboard and its action.
     func addDoneToolBar() {
         let toolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
         toolbar.barStyle = .default

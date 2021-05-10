@@ -20,7 +20,7 @@ final class WeatherViewController: UIViewController {
     
     private var nyWeather: MainWeatherInfo?
     private var lyonWeather: MainWeatherInfo?
-    private var cityPicID: PhotosInfo?
+    private var cityPicUrls: PhotosInfo?
     
     // MARK: Override methods
     
@@ -98,7 +98,7 @@ final class WeatherViewController: UIViewController {
                 switch result {
                 case .success(let photoInfo):
                     /// If we get data from the network call, we'll define a randomElement from it (which is a photo collection), and then, we'll call the method updatePhoto().
-                    self?.cityPicID = photoInfo.randomElement()
+                    self?.cityPicUrls = photoInfo.randomElement()
                     self?.updatePhoto()
                 case .failure(let error):
                     print("error fetching photo data : \(error)")
@@ -110,20 +110,20 @@ final class WeatherViewController: UIViewController {
     
     private func updateUI(_ cityWeather: MainWeatherInfo?) {
         /// First we're checking we've got data
-        guard let new = cityWeather,
-              let cityWeather = new.weather.first else { return }
-        print("fetching the weather for : \(new.name)")
+        guard let recoveredData = cityWeather,
+              let cityWeather = recoveredData.weather.first else { return }
+        print("fetching the weather for : \(recoveredData.name)")
         ///Then, we're filling the differents label and the icon ImageView with these datas.
-        cityNameLabel.text = new.name
-        tempLabel.text = "\(new.main.temp.editMaxDigitTo(1))°C"
+        cityNameLabel.text = recoveredData.name
+        tempLabel.text = "\(recoveredData.main.temp.editMaxDigitTo(1))°C"
         iconImageView.loadIcon(cityWeather.icon)
         descriptionLabel.text = cityWeather.description.capitalizingFirstLetter()
-        feelsLikeLabel.text = "Ressenti : \(new.main.feels_like.editMaxDigitTo(1)) °C"
+        feelsLikeLabel.text = "Ressenti : \(recoveredData.main.feels_like.editMaxDigitTo(1)) °C"
     }
     
     private func updatePhoto() {
         /// Updating the background image according to the city selectionned thanks to the method loadCityImage().
-        guard let photosInfo = self.cityPicID else { return }
+        guard let photosInfo = self.cityPicUrls else { return }
         print("picture's URL : \(photosInfo.urls.regular)")
         /// Updating the cityPicture with the loadCityImage() method taking as parameter the url from the random photo we get by calling fetchPhotoData() in fetchCityPicture().
         cityPicture.loadCityImage(photosInfo.urls.regular)

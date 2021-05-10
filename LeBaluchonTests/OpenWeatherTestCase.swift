@@ -84,6 +84,7 @@ class OpenWeatherTestCase: XCTestCase {
             let icon = "01d"
             let name = "New York"
             let description = "ciel dégagé"
+            
             XCTAssertNotNil(success)
             XCTAssertEqual(success.name, name)
             XCTAssertEqual(success.weather[0].description, description)
